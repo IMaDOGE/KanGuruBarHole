@@ -22,6 +22,14 @@ public class Application {
             d.setQuantity(10);
 
             dDAO.saveDrink(d);
+
+            Drink d2 = new Drink();
+            d2.setName("Jack Daniels");
+            d2.setOrderPrice(5000);
+            d2.setSellPrice(400);
+            d2.setQuantity(5);
+
+            dDAO.saveDrink(d2);
         }
         catch (Exception e)
         {
