@@ -1,2 +1,0 @@
-# KanGuruBarHole
-sfm projekt
