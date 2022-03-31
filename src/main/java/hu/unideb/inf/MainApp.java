@@ -21,10 +21,28 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLDrinks.fxml"));
         Scene scene = new Scene(loader.load());
-        ((FXMLDrinksController)loader.getController()).setModel(new Drinks());
+        ((FXMLDrinksController) loader.getController()).setModel(new Drinks());
         stage.setTitle("Students Register");
         stage.setScene(scene);
         stage.show();
+        try (DrinkDAO dDAO = new JpaDrinkDAO()) {
+            Drink d = new Drink();
+            d.setName("Coca Cola");
+            d.setOrderPrice(150);
+            d.setSellPrice(250);
+            d.setQuantity(10);
+
+            dDAO.saveDrink(d);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Open your browser and navigate to http://localhost:8082/");
+        System.out.println("JDBC URL: jdbc:h2:mem:my_database");
+        System.out.println("User Name: sa");
+        System.out.println("Password: ");
+
+    }
         /*Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         
         Scene scene = new Scene(root);
@@ -33,7 +51,7 @@ public class MainApp extends Application {
         stage.setTitle("JavaFX and Maven");
         stage.setScene(scene);
         stage.show();*/
-    }
+
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
@@ -46,32 +64,12 @@ public class MainApp extends Application {
     public static void main(String[] args) throws SQLException {
         launch(args);
         startDatabase();
-
-        try(DrinkDAO dDAO = new JpaDrinkDAO())
-        {
-            Drink d = new Drink();
-            d.setName("Coca Cola");
-            d.setOrderPrice(150);
-            d.setSellPrice(250);
-            d.setQuantity(10);
-
-            dDAO.saveDrink(d);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        System.out.println("Open your browser and navigate to http://localhost:8082/");
-        System.out.println("JDBC URL: jdbc:h2:mem:my_database");
-        System.out.println("User Name: sa");
-        System.out.println("Password: ");
-
     }
 
     private static void startDatabase() throws SQLException {
         new Server().runTool("-tcp", "-web", "-ifNotExists");
     }
-    }
+}
+
 
 
