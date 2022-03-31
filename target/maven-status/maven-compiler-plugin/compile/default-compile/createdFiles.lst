@@ -1,5 +1,5 @@
 hu\unideb\inf\Main.class
-hu\unideb\inf\model\Drink.class
-hu\unideb\inf\model\JpaDrinkDAO.class
-hu\unideb\inf\model\DrinkDAO.class
+hu\unideb\inf\model\DrinkModel.class
+hu\unideb\inf\model\Drinks.class
 hu\unideb\inf\MainApp.class
+hu\unideb\inf\FXMLDrinksController.class

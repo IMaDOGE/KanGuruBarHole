@@ -17,14 +17,9 @@ import java.sql.SQLException;
 
 public class MainApp extends Application {
 
-    @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLDrinks.fxml"));
-        Scene scene = new Scene(loader.load());
-        ((FXMLDrinksController) loader.getController()).setModel(new Drinks());
-        stage.setTitle("Students Register");
-        stage.setScene(scene);
-        stage.show();
+        startDatabase();
+
         try (DrinkDAO dDAO = new JpaDrinkDAO()) {
             Drink d = new Drink();
             d.setName("Coca Cola");
@@ -36,6 +31,13 @@ public class MainApp extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLDrinks.fxml"));
+        Scene scene = new Scene(loader.load());
+        ((FXMLDrinksController) loader.getController()).setModel(new Drinks());
+        stage.setTitle("Students Register");
+        stage.setScene(scene);
+        stage.show();
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");
         System.out.println("JDBC URL: jdbc:h2:mem:my_database");
@@ -63,7 +65,7 @@ public class MainApp extends Application {
      */
     public static void main(String[] args) throws SQLException {
         launch(args);
-        startDatabase();
+//        startDatabase();
     }
 
     private static void startDatabase() throws SQLException {
