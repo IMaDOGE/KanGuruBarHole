@@ -43,7 +43,7 @@ public class JpaDrinkDAO implements DrinkDAO
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         entityManager.close();
         entityManagerFactory.close();
     }

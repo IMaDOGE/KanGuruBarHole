@@ -22,25 +22,25 @@ public class MainApp extends Application {
 
         try (DrinkDAO dDAO = new JpaDrinkDAO()) {
 
-            Drink d1 = new Drink("Coca Cola 0.5", 0, 0, 450);
-            Drink d2 = new Drink("Pepsi 0.5", 0, 0, 450);
-            Drink d3 = new Drink("Sprite", 0, 0, 450);
-            Drink d4 = new Drink("Fanta", 0, 0, 450);
-            Drink d5 = new Drink("Coca Cola 0.3", 0, 0, 240);
-            Drink d6 = new Drink("Pepsi 0.3", 0, 0, 240);
-            Drink d7 = new Drink("Kőbányai", 0, 0, 210);
-            Drink d8 = new Drink("Heineken", 0, 0, 290);
-            Drink d9 = new Drink("Csapolt sör 0.3", 0, 0, 300);
-            Drink d10 = new Drink("Csapolt sör 0.5", 0, 0, 450);
-            Drink d11 = new Drink("Henessy", 0, 0, 690);
-            Drink d12 = new Drink("Sierra tequilla", 0, 0, 650);
-            Drink d13 = new Drink("Jack Daniels", 0, 0, 650);
-            Drink d14 = new Drink("Aranyalma", 0, 0, 580);
-            Drink d15 = new Drink("Csatos", 0, 0, 360);
-            Drink d16 = new Drink("Lays-Só", 0, 0, 400);
-            Drink d17 = new Drink("Lays-Hagy", 0, 0, 400);
-            Drink d18 = new Drink("Lays-Sajt", 0, 0, 400);
-            Drink d19 = new Drink("Ropi", 0, 0, 210);
+            Drink d1 = new Drink("Coca Cola 0.5", 100, 300, 450);
+            Drink d2 = new Drink("Pepsi 0.5", 100, 300, 450);
+            Drink d3 = new Drink("Sprite", 100, 300, 450);
+            Drink d4 = new Drink("Fanta", 100, 300, 450);
+            Drink d5 = new Drink("Coca Cola 0.3", 100, 150, 240);
+            Drink d6 = new Drink("Pepsi 0.3", 100, 150, 240);
+            Drink d7 = new Drink("Kőbányai", 100, 120, 210);
+            Drink d8 = new Drink("Heineken", 100, 170, 290);
+            Drink d9 = new Drink("Csapolt sör 0.3", 100, 180, 300);
+            Drink d10 = new Drink("Csapolt sör 0.5", 100, 28000, 450);
+            Drink d11 = new Drink("Henessy", 100, 12000, 690);
+            Drink d12 = new Drink("Sierra tequilla", 100, 4700, 650);
+            Drink d13 = new Drink("Jack Daniels", 100, 11000, 650);
+            Drink d14 = new Drink("Aranyalma", 100, 8000, 580);
+            Drink d15 = new Drink("Csatos", 100, 3900, 360);
+            Drink d16 = new Drink("Lays-Só", 100, 250, 400);
+            Drink d17 = new Drink("Lays-Hagy", 100, 250, 400);
+            Drink d18 = new Drink("Lays-Sajt", 100, 250, 400);
+            Drink d19 = new Drink("Ropi", 100, 100, 210);
 
             dDAO.saveDrink(d1);
             dDAO.saveDrink(d2);
@@ -87,16 +87,6 @@ public class MainApp extends Application {
 
     }
 
-        /*Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
-        
-        stage.setTitle("JavaFX and Maven");
-        stage.setScene(scene);
-        stage.show();*/
-
-
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be
@@ -107,7 +97,6 @@ public class MainApp extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-//        startDatabase();
     }
 
     private static void startDatabase() throws SQLException {
