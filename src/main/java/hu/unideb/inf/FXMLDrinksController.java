@@ -1,6 +1,7 @@
 package hu.unideb.inf;
 
 import hu.unideb.inf.model.Drinks;
+import hu.unideb.inf.model.JpaDrinkDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -293,9 +294,9 @@ public class FXMLDrinksController {
         ListaBox2.setText(ListaBox2.getText()+"Csatos szilva\t\t\t\t\t\t 0,5\n");
     }
 
-    public void RopiRendelPushed(ActionEvent actionEvent) {
+    public void RopiRendelPushed(ActionEvent actionEvent) throws Exception {
         ListaBox2.setText(ListaBox2.getText()+"Ropi \t\t\t\t\t\t\t 1 cs.\n");
-
+//        JpaDrinkDAO.ropi_close();
     }
 
     public void RendelButtonPushed(ActionEvent actionEvent) {

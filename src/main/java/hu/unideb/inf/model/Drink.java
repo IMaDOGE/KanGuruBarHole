@@ -16,6 +16,16 @@ public class Drink
     private int orderPrice;
     private int sellPrice;
 
+    public Drink(String name, int quantity, int orderPrice, int sellPrice) {
+        this.name = name;
+        this.quantity = quantity;
+        this.orderPrice = orderPrice;
+        this.sellPrice = sellPrice;
+    }
+
+    public Drink() {
+    }
+
     public int getId() {
         return id;
     }

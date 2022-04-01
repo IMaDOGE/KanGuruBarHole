@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface DrinkDAO extends AutoCloseable
 {
-    public void saveDrink(Drink d);
-    public void deleteDrink(Drink d);
-    public void updateDrink(Drink d);
-    public List<Drink> getDrinks();
+    void saveDrink(Drink d);
+    void deleteDrink(Drink d);
+    void updateDrink(Drink d);
+    List<Drink> getDrinks();
 }
