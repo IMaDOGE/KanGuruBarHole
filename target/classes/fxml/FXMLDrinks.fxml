@@ -18,762 +18,937 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FXMLDrinksController">
-   <children>
-      <TabPane prefHeight="768.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-          <tabs>
-              <Tab text="Kiskereskedelem">
-                  <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="1253.0">
-                          <children>
-                              <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../bg.jpg" />
-                           </image>
-                        </ImageView>
-                              <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
-                                  <items>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
-                                          <children>
-                                    <Text fill="#eda407d6" layoutX="-6.0" layoutY="113.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="BarHole          " textAlignment="RIGHT" wrappingWidth="1555.800048828125">
-                                       <font>
-                                          <Font name="Franklin Gothic Demi Cond" size="110.0" />
-                                       </font>
-                                       <cursor>
-                                          <Cursor fx:constant="TEXT" />
-                                       </cursor>
-                                       <effect>
-                                          <InnerShadow />
-                                       </effect>
-                                    </Text>
-                                    <Text fill="#eda407d6" layoutX="16.0" layoutY="110.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="          KanGuru" wrappingWidth="1562.1998901367188">
-                                       <font>
-                                          <Font name="Franklin Gothic Demi Cond" size="110.0" />
-                                       </font>
-                                       <cursor>
-                                          <Cursor fx:constant="TEXT" />
-                                       </cursor>
-                                       <effect>
-                                          <InnerShadow />
-                                       </effect>
-                                    </Text>
-                                              <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../kangurubar.jpg" />
-                                       </image></ImageView>
-                                          </children>
-                                      </AnchorPane>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="599.0">
-                                          <children>
-                                              <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="646.0" prefWidth="1551.0">
-                                                  <items>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                          <children>
-                                                              <TextArea fx:id="ListaBox" prefHeight="515.0" prefWidth="307.0" />
-                                                              <Button fx:id="RendelButton" layoutX="1.0" layoutY="518.0" mnemonicParsing="false" onAction="#RendelButtonPushed" prefHeight="74.0" prefWidth="303.0" text="Végrehajtás" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="36.0" />
-                                                                  </font>
-                                                              </Button>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="854.0">
-                                                          <children>
-                                                              <GridPane layoutX="21.0" prefHeight="546.0" prefWidth="1222.0">
-                                                                  <columnConstraints>
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                  </columnConstraints>
-                                                                  <rowConstraints>
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                  </rowConstraints>
-                                                                  <children>
-                                                                      <Button fx:id="SpriteButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SpritePushed" prefHeight="85.0" prefWidth="124.0" text="Sprite 0,5" GridPane.columnIndex="3">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../sprite-0.5l-xxl.jpeg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="PepsiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#PepsiPushed" prefHeight="86.0" prefWidth="123.0" text="Pepsi 0,5" GridPane.columnIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../pepsi-05l.png" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="FantaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#FantaPushed" prefHeight="78.0" prefWidth="126.0" text="Fanta 0,5" GridPane.columnIndex="4">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../fanta-narancs-0.5l.jpeg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="KobanyaiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#KőbányaiPushed" prefHeight="83.0" prefWidth="122.0" text="Kőbányai 0,5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="CocaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#CocaPushed" prefHeight="113.0" prefWidth="154.0" text="Coca-cola 0,5" textFill="#101010" GridPane.columnIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../coca-cola-0,5l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="BorsodiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#BorsodiPushed" prefHeight="78.0" prefWidth="125.0" text="Borsodi 0,5" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="HeinekenButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HeinekenPushed" prefHeight="87.0" prefWidth="122.0" text="Heineken 0,5" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../ShotType1_540x540.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="HennessyButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HennessyPushed" prefHeight="86.0" prefWidth="125.0" text="Hennessy 0,05" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../hennessy-vs-15l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="SierraButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SierraPushed" prefHeight="91.0" prefWidth="122.0" text="Sierra tequila 0,05" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="JackButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#JackPushed" prefHeight="86.0" prefWidth="125.0" text="Jack Daniels 0,05" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../jack-daniels-1l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="AranyalmaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#AranyPushed" prefHeight="79.0" prefWidth="122.0" text="Aranyalma 0,05" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../panyolai_aranyalma12.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Üdítők" textAlignment="CENTER" wrappingWidth="121.39990997314453">
-                                                         <font>
-                                                            <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                         </font>
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <effect>
-                                                            <InnerShadow />
-                                                         </effect>
-                                                      </Text>
-                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Sörök" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="1">
-                                                         <font>
-                                                            <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                         </font>
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <effect>
-                                                            <InnerShadow />
-                                                         </effect>
-                                                      </Text>
-                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Röviditalok" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="2">
-                                                         <font>
-                                                            <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                         </font>
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <effect>
-                                                            <InnerShadow />
-                                                         </effect>
-                                                      </Text>
-                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Snack" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="3">
-                                                         <font>
-                                                            <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                         </font>
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <effect>
-                                                            <InnerShadow />
-                                                         </effect>
-                                                      </Text>
-                                                      <Button fx:id="sosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SosPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-sós" textFill="#101010" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                         <graphic>
-                                                            <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../sos.jpg" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="hagymasButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HagymasPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Hagym-tejf" textFill="#101010" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                                         <graphic>
-                                                            <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../hagym.jpg" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="SajtosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SajtosPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Sajtos" textFill="#101010" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                                         <graphic>
-                                                            <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../sajtos.jpg" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="Csapolt3Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt3Pushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,3" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                                         <graphic>
-                                                            <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../csapolt.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="Csapolt5Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt5Pushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,5" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                                                         <graphic>
-                                                            <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../csapolt.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="Coca33Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Coca33Pushed" prefHeight="78.0" prefWidth="126.0" text="Coca 0,33" GridPane.columnIndex="5">
-                                                         <graphic>
-                                                            <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../coc2.jpg" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="Pepsi33Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Pepsi33Pushed" prefHeight="78.0" prefWidth="126.0" text="Pepsi 0,33" GridPane.columnIndex="6">
-                                                         <graphic>
-                                                            <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../peps2.jpg" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="CsatosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#CsatosPushed" prefHeight="79.0" prefWidth="122.0" text="Csatos 0,05" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                                                         <graphic>
-                                                            <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../csatos.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Button fx:id="RopiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#RopiPushed" prefHeight="113.0" prefWidth="154.0" text="Ropi" textFill="#101010" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                                         <font>
-                                                            <Font name="Elephant" size="14.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../ropi.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                                  </children>
-                                                              </GridPane>
-                                                              <Label fx:id="OsszegLabel" layoutX="985.0" layoutY="511.0" prefHeight="59.0" prefWidth="163.0" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="18.0" />
-                                                                  </font>
-                                                              </Label>
-                                                              <Label fx:id="KasszaLabel" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="36.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                  </items>
-                                              </SplitPane>
-                                          </children>
-                                      </AnchorPane>
-                                  </items>
-                              </SplitPane>
-                          </children></AnchorPane>
-                  </content>
-              </Tab>
-              <Tab text="Nagykereskedelem">
-                  <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="1253.0">
-                          <children>
-                              <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                      <Image url="@../bg2.jpg" />
-                                  </image>
-                              </ImageView>
-                              <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
-                                  <items>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
-                                          <children>
-                                              <Text fill="#eda407d6" layoutX="-6.0" layoutY="113.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="BarHole          " textAlignment="RIGHT" wrappingWidth="1555.800048828125">
-                                                  <font>
-                                                      <Font name="Franklin Gothic Demi Cond" size="110.0" />
-                                                  </font>
-                                                  <cursor>
-                                                      <Cursor fx:constant="TEXT" />
-                                                  </cursor>
-                                                  <effect>
-                                                      <InnerShadow />
-                                                  </effect>
-                                              </Text>
-                                              <Text fill="#eda407d6" layoutX="16.0" layoutY="110.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="          KanGuru" wrappingWidth="1562.1998901367188">
-                                                  <font>
-                                                      <Font name="Franklin Gothic Demi Cond" size="110.0" />
-                                                  </font>
-                                                  <cursor>
-                                                      <Cursor fx:constant="TEXT" />
-                                                  </cursor>
-                                                  <effect>
-                                                      <InnerShadow />
-                                                  </effect>
-                                              </Text>
-                                              <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@../kangurubar.jpg" />
-                                                  </image></ImageView>
-                                          </children>
-                                      </AnchorPane>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="599.0">
-                                          <children>
-                                              <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="646.0" prefWidth="1551.0">
-                                                  <items>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                          <children>
-                                                              <TextArea fx:id="ListaBox2" prefHeight="515.0" prefWidth="307.0" />
-                                                              <Button fx:id="RendelButton2" layoutX="1.0" layoutY="518.0" mnemonicParsing="false" onAction="#RendelButtonPushed2" prefHeight="74.0" prefWidth="303.0" text="Beszerzés" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="36.0" />
-                                                                  </font>
-                                                              </Button>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="854.0">
-                                                          <children>
-                                                              <GridPane layoutX="21.0" prefHeight="546.0" prefWidth="1222.0">
-                                                                  <columnConstraints>
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                  </columnConstraints>
-                                                                  <rowConstraints>
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                  </rowConstraints>
-                                                                  <children>
-                                                                      <Button fx:id="SpriteButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SpriteRendelPushed" prefHeight="85.0" prefWidth="124.0" text="Sprite 0,5" GridPane.columnIndex="3">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../sprite-0.5l-xxl.jpeg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="PepsiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#PepsiRendelPushed" prefHeight="86.0" prefWidth="123.0" text="Pepsi 0,5" GridPane.columnIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../pepsi-05l.png" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="FantaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#FantaRendelPushed" prefHeight="78.0" prefWidth="126.0" text="Fanta 0,5" GridPane.columnIndex="4">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../fanta-narancs-0.5l.jpeg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="KobanyaiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#KőbányaiRendelPushed" prefHeight="83.0" prefWidth="122.0" text="Kőbányai 0,5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="CocaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#CocaRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Coca-cola 0,5" textFill="#101010" GridPane.columnIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../coca-cola-0,5l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="BorsodiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#BorsodiRendelPushed" prefHeight="78.0" prefWidth="125.0" text="Borsodi 0,5" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="HeinekenButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HeinekenRendelPushed" prefHeight="87.0" prefWidth="122.0" text="Heineken 0,5" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../ShotType1_540x540.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="HennessyButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HennessyRendelPushed" prefHeight="86.0" prefWidth="125.0" text="Hennessy 0,05" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../hennessy-vs-15l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="SierraButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SierraRendelPushed" prefHeight="91.0" prefWidth="122.0" text="Sierra tequila 0,05" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="JackButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#JackRendelPushed" prefHeight="86.0" prefWidth="125.0" text="Jack Daniels 0,05" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../jack-daniels-1l.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="AranyalmaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#AranyRendelPushed" prefHeight="79.0" prefWidth="122.0" text="Aranyalma 0,05" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../panyolai_aranyalma12.jpg" />
-                                                                                  </image></ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Üdítők" textAlignment="CENTER" wrappingWidth="121.39990997314453">
-                                                                          <font>
-                                                                              <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                                          </font>
-                                                                          <cursor>
-                                                                              <Cursor fx:constant="TEXT" />
-                                                                          </cursor>
-                                                                          <effect>
-                                                                              <InnerShadow />
-                                                                          </effect>
-                                                                      </Text>
-                                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Sörök" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="1">
-                                                                          <font>
-                                                                              <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                                          </font>
-                                                                          <cursor>
-                                                                              <Cursor fx:constant="TEXT" />
-                                                                          </cursor>
-                                                                          <effect>
-                                                                              <InnerShadow />
-                                                                          </effect>
-                                                                      </Text>
-                                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Röviditalok" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="2">
-                                                                          <font>
-                                                                              <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                                          </font>
-                                                                          <cursor>
-                                                                              <Cursor fx:constant="TEXT" />
-                                                                          </cursor>
-                                                                          <effect>
-                                                                              <InnerShadow />
-                                                                          </effect>
-                                                                      </Text>
-                                                                      <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Snack" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="3">
-                                                                          <font>
-                                                                              <Font name="Franklin Gothic Demi Cond" size="28.0" />
-                                                                          </font>
-                                                                          <cursor>
-                                                                              <Cursor fx:constant="TEXT" />
-                                                                          </cursor>
-                                                                          <effect>
-                                                                              <InnerShadow />
-                                                                          </effect>
-                                                                      </Text>
-                                                                      <Button fx:id="sosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SosRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-sós" textFill="#101010" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../sos.jpg" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="hagymasButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HagymasRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Hagym-tejf" textFill="#101010" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../hagym.jpg" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="SajtosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SajtosRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Sajtos" textFill="#101010" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../sajtos.jpg" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="Csapolt3Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt3RendelPushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,3" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../csapolt.png" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="Csapolt5Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt5RendelPushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,5" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../csapolt.png" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="Coca33Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Coca33RendelPushed" prefHeight="78.0" prefWidth="126.0" text="Coca 0,33" GridPane.columnIndex="5">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../coc2.jpg" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="Pepsi33Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Pepsi33RendelPushed" prefHeight="78.0" prefWidth="126.0" text="Pepsi 0,33" GridPane.columnIndex="6">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../peps2.jpg" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="CsatosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#CsatosRendelPushed" prefHeight="79.0" prefWidth="122.0" text="Csatos 0,05" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../csatos.png" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                      </Button>
-                                                                      <Button fx:id="RopiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#RopiRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Ropi" textFill="#101010" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                                                          <font>
-                                                                              <Font name="Elephant" size="14.0" />
-                                                                          </font>
-                                                                          <graphic>
-                                                                              <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                                                                  <image>
-                                                                                      <Image url="@../ropi.png" />
-                                                                                  </image>
-                                                                              </ImageView>
-                                                                          </graphic>
-                                                                      </Button>
-                                                                  </children>
-                                                              </GridPane>
-                                                              <Label fx:id="OsszegLabel2" layoutX="985.0" layoutY="511.0" prefHeight="59.0" prefWidth="163.0" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="18.0" />
-                                                                  </font>
-                                                              </Label>
-                                                              <Label fx:id="KasszaLabel2" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
-                                                                  <font>
-                                                                      <Font name="Franklin Gothic Heavy" size="36.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                  </items>
-                                              </SplitPane>
-                                          </children>
-                                      </AnchorPane>
-                                  </items>
-                              </SplitPane>
-                          </children></AnchorPane>
-                  </content>
-              </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+    <children>
+        <TabPane prefHeight="768.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Kiskereskedelem">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="1253.0">
+                            <children>
+                                <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../bg.jpg" />
+                                    </image>
+                                </ImageView>
+                                <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
+                                            <children>
+                                                <Text fill="#eda407d6" layoutX="-6.0" layoutY="113.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="BarHole          " textAlignment="RIGHT" wrappingWidth="1555.800048828125">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi Cond" size="110.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="TEXT" />
+                                                    </cursor>
+                                                    <effect>
+                                                        <InnerShadow />
+                                                    </effect>
+                                                </Text>
+                                                <Text fill="#eda407d6" layoutX="16.0" layoutY="110.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="          KanGuru" wrappingWidth="1562.1998901367188">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi Cond" size="110.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="TEXT" />
+                                                    </cursor>
+                                                    <effect>
+                                                        <InnerShadow />
+                                                    </effect>
+                                                </Text>
+                                                <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../kangurubar.jpg" />
+                                                    </image></ImageView>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="599.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="646.0" prefWidth="1551.0">
+                                                    <items>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                            <children>
+                                                                <Button fx:id="RendelButton" layoutX="1.0" layoutY="518.0" mnemonicParsing="false" onAction="#RendelButtonPushed" prefHeight="74.0" prefWidth="303.0" text="Végrehajtás" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Heavy" size="36.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <GridPane layoutX="4.0" layoutY="6.0" prefHeight="28.0" prefWidth="300.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Ár" textAlignment="CENTER" wrappingWidth="102.19981336593628" GridPane.columnIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Mennyiség" textAlignment="CENTER" wrappingWidth="98.99986219406128" GridPane.columnIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Név" textAlignment="CENTER" wrappingWidth="100.59983777999878">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                    </children>
+                                                                </GridPane>
+                                                                <GridPane layoutX="4.0" layoutY="35.0" prefHeight="482.0" prefWidth="306.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <TextArea fx:id="NevLista" prefHeight="316.0" prefWidth="152.0">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Book" size="18.0" />
+                                                                            </font></TextArea>
+                                                                        <TextArea fx:id="MennyLista" prefHeight="316.0" prefWidth="152.0" GridPane.columnIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi" size="18.0" />
+                                                                            </font>
+                                                                        </TextArea>
+                                                                        <TextArea fx:id="ArLista" prefHeight="316.0" prefWidth="152.0" GridPane.columnIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi" size="18.0" />
+                                                                            </font>
+                                                                        </TextArea>
+                                                                    </children>
+                                                                </GridPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="854.0">
+                                                            <children>
+                                                                <GridPane layoutX="21.0" prefHeight="356.0" prefWidth="1222.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints maxHeight="103.60001220703123" minHeight="10.0" prefHeight="38.80002441406248" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Button fx:id="SpriteButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SpritePushed" prefHeight="85.0" prefWidth="124.0" text="Sprite 0,5" GridPane.columnIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sprite-0.5l-xxl.jpeg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="PepsiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#PepsiPushed" prefHeight="86.0" prefWidth="123.0" text="Pepsi 0,5" GridPane.columnIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../pepsi-05l.png" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="FantaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#FantaPushed" prefHeight="88.0" prefWidth="123.0" text="Fanta 0,5" GridPane.columnIndex="4">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../fanta-narancs-0.5l.jpeg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="KobanyaiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#KőbányaiPushed" prefHeight="83.0" prefWidth="122.0" text="Kőbányai 0,5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="CocaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#CocaPushed" prefHeight="113.0" prefWidth="154.0" text="Coca-cola 0,5" textFill="#101010" GridPane.columnIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../coca-cola-0,5l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="BorsodiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#BorsodiPushed" prefHeight="84.0" prefWidth="123.0" text="Borsodi 0,5" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="HeinekenButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HeinekenPushed" prefHeight="87.0" prefWidth="122.0" text="Heineken 0,5" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../ShotType1_540x540.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="HennessyButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HennessyPushed" prefHeight="86.0" prefWidth="125.0" text="Hennessy 0,05" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../hennessy-vs-15l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="SierraButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SierraPushed" prefHeight="91.0" prefWidth="122.0" text="Sierra tequila 0,05" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="JackButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#JackPushed" prefHeight="86.0" prefWidth="125.0" text="Jack Daniels 0,05" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../jack-daniels-1l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="AranyalmaButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#AranyPushed" prefHeight="87.0" prefWidth="124.0" text="Aranyalma 0,05" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../panyolai_aranyalma12.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Üdítők" textAlignment="CENTER" wrappingWidth="121.39990997314453">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Sörök" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Röviditalok" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Snack" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="3">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Button fx:id="sosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SosPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-sós" textFill="#101010" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sos.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="hagymasButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#HagymasPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Hagym-tejf" textFill="#101010" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../hagym.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="SajtosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#SajtosPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Sajtos" textFill="#101010" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sajtos.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Csapolt3Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt3Pushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,3" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csapolt.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Csapolt5Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt5Pushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,5" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csapolt.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Coca33Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Coca33Pushed" prefHeight="89.0" prefWidth="123.0" text="Coca 0,33" GridPane.columnIndex="5">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../coc2.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Pepsi33Button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Pepsi33Pushed" prefHeight="78.0" prefWidth="126.0" text="Pepsi 0,33" GridPane.columnIndex="6">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../peps2.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="CsatosButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#CsatosPushed" prefHeight="85.0" prefWidth="122.0" text="Csatos 0,05" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csatos.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="RopiButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#RopiPushed" prefHeight="113.0" prefWidth="154.0" text="Ropi" textFill="#101010" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../ropi.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                        </Button>
+                                                                    </children>
+                                                                </GridPane>
+                                                                <Label fx:id="OsszegLabel" layoutX="985.0" layoutY="511.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="KasszaLabel" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Heavy" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="42.0" layoutY="535.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi" size="48.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <Label fx:id="VegosszegLabel" layoutX="253.0" layoutY="465.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Text fill="#eda407d6" layoutX="60.0" layoutY="497.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                                                                    </font>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="TEXT" />
+                                                                    </cursor>
+                                                                    <effect>
+                                                                        <InnerShadow />
+                                                                    </effect>
+                                                                </Text>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Nagykereskedelem">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="1253.0">
+                            <children>
+                                <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../bg2.jpg" />
+                                    </image>
+                                </ImageView>
+                                <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
+                                            <children>
+                                                <Text fill="#eda407d6" layoutX="-6.0" layoutY="113.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="BarHole          " textAlignment="RIGHT" wrappingWidth="1555.800048828125">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi Cond" size="110.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="TEXT" />
+                                                    </cursor>
+                                                    <effect>
+                                                        <InnerShadow />
+                                                    </effect>
+                                                </Text>
+                                                <Text fill="#eda407d6" layoutX="16.0" layoutY="110.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="          KanGuru" wrappingWidth="1562.1998901367188">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi Cond" size="110.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="TEXT" />
+                                                    </cursor>
+                                                    <effect>
+                                                        <InnerShadow />
+                                                    </effect>
+                                                </Text>
+                                                <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../kangurubar.jpg" />
+                                                    </image></ImageView>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="599.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="646.0" prefWidth="1551.0">
+                                                    <items>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                            <children>
+                                                                <Button fx:id="RendelButton2" layoutX="1.0" layoutY="518.0" mnemonicParsing="false" onAction="#RendelButtonPushed2" prefHeight="74.0" prefWidth="303.0" text="Beszerzés" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Heavy" size="36.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <GridPane layoutY="59.0" prefHeight="446.0" prefWidth="306.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <TextArea fx:id="NevLista2" prefHeight="431.0" prefWidth="102.0">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi" size="18.0" />
+                                                                            </font>
+                                                                        </TextArea>
+                                                                        <TextArea fx:id="MennyLista2" prefHeight="432.0" prefWidth="102.0" GridPane.columnIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi" size="18.0" />
+                                                                            </font>
+                                                                        </TextArea>
+                                                                        <TextArea fx:id="ArLista2" prefHeight="316.0" prefWidth="152.0" GridPane.columnIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi" size="18.0" />
+                                                                            </font>
+                                                                        </TextArea>
+                                                                    </children>
+                                                                </GridPane>
+                                                                <GridPane layoutX="3.0" layoutY="14.0" prefHeight="28.0" prefWidth="300.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Ár" textAlignment="CENTER" wrappingWidth="102.19981336593628" GridPane.columnIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Mennyiség" textAlignment="CENTER" wrappingWidth="98.99986219406128" GridPane.columnIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Név" textAlignment="CENTER" wrappingWidth="100.59983777999878">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="22.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                    </children>
+                                                                </GridPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="854.0">
+                                                            <children>
+                                                                <GridPane layoutX="21.0" prefHeight="512.0" prefWidth="1222.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Button fx:id="SpriteButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SpriteRendelPushed" prefHeight="85.0" prefWidth="124.0" text="Sprite 0,5" GridPane.columnIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sprite-0.5l-xxl.jpeg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="PepsiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#PepsiRendelPushed" prefHeight="86.0" prefWidth="123.0" text="Pepsi 0,5" GridPane.columnIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../pepsi-05l.png" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="FantaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#FantaRendelPushed" prefHeight="78.0" prefWidth="126.0" text="Fanta 0,5" GridPane.columnIndex="4">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../fanta-narancs-0.5l.jpeg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="KobanyaiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#KőbányaiRendelPushed" prefHeight="83.0" prefWidth="122.0" text="Kőbányai 0,5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="CocaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#CocaRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Coca-cola 0,5" textFill="#101010" GridPane.columnIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../coca-cola-0,5l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="BorsodiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#BorsodiRendelPushed" prefHeight="78.0" prefWidth="125.0" text="Borsodi 0,5" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="HeinekenButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HeinekenRendelPushed" prefHeight="87.0" prefWidth="122.0" text="Heineken 0,5" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../ShotType1_540x540.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="HennessyButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HennessyRendelPushed" prefHeight="86.0" prefWidth="125.0" text="Hennessy 0,05" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../hennessy-vs-15l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="SierraButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SierraRendelPushed" prefHeight="91.0" prefWidth="122.0" text="Sierra tequila 0,05" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="JackButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#JackRendelPushed" prefHeight="86.0" prefWidth="125.0" text="Jack Daniels 0,05" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../jack-daniels-1l.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="AranyalmaButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#AranyRendelPushed" prefHeight="79.0" prefWidth="122.0" text="Aranyalma 0,05" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../panyolai_aranyalma12.jpg" />
+                                                                                    </image></ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Üdítők" textAlignment="CENTER" wrappingWidth="121.39990997314453">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Sörök" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="1">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Röviditalok" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="2">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Text fill="#eda407d6" strokeLineJoin="ROUND" strokeWidth="0.0" text="Snack" textAlignment="CENTER" wrappingWidth="121.39990997314453" GridPane.rowIndex="3">
+                                                                            <font>
+                                                                                <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                                                                            </font>
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="TEXT" />
+                                                                            </cursor>
+                                                                            <effect>
+                                                                                <InnerShadow />
+                                                                            </effect>
+                                                                        </Text>
+                                                                        <Button fx:id="sosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SosRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-sós" textFill="#101010" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sos.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="hagymasButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#HagymasRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Hagym-tejf" textFill="#101010" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../hagym.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="SajtosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#SajtosRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Lays-Sajtos" textFill="#101010" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../sajtos.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Csapolt3Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt3RendelPushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,3" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csapolt.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Csapolt5Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Csatolt5RendelPushed" prefHeight="78.0" prefWidth="125.0" text="Csapolt 0,5" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csapolt.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Coca33Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Coca33RendelPushed" prefHeight="78.0" prefWidth="126.0" text="Coca 0,33" GridPane.columnIndex="5">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../coc2.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="Pepsi33Button2" contentDisplay="TOP" mnemonicParsing="false" onAction="#Pepsi33RendelPushed" prefHeight="78.0" prefWidth="126.0" text="Pepsi 0,33" GridPane.columnIndex="6">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../peps2.jpg" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="CsatosButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#CsatosRendelPushed" prefHeight="79.0" prefWidth="122.0" text="Csatos 0,05" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../csatos.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                        </Button>
+                                                                        <Button fx:id="RopiButton2" contentDisplay="TOP" mnemonicParsing="false" onAction="#RopiRendelPushed" prefHeight="113.0" prefWidth="154.0" text="Ropi" textFill="#101010" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                                            <font>
+                                                                                <Font name="Elephant" size="14.0" />
+                                                                            </font>
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../ropi.png" />
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                        </Button>
+                                                                    </children>
+                                                                </GridPane>
+                                                                <Label fx:id="OsszegLabel2" layoutX="952.0" layoutY="517.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Heavy" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="KasszaLabel2" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Heavy" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Text fill="#eda407d6" layoutX="14.0" layoutY="557.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                                                                    </font>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="TEXT" />
+                                                                    </cursor>
+                                                                    <effect>
+                                                                        <InnerShadow />
+                                                                    </effect>
+                                                                </Text>
+                                                                <Label fx:id="VegosszegLabel2" layoutX="205.0" layoutY="523.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
+                                                                    <font>
+                                                                        <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </AnchorPane>

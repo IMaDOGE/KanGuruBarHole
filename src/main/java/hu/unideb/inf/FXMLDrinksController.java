@@ -9,9 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class FXMLDrinksController {
     private Drinks drinks;
@@ -19,6 +21,22 @@ public class FXMLDrinksController {
     public void setModel(Drinks drinks) {
         this.drinks = drinks;
     }
+    @FXML
+    private TextArea MennyLista;
+
+    @FXML
+    private TextArea MennyLista2;
+
+    @FXML
+    private TextArea NevLista;
+
+    @FXML
+    private TextArea NevLista2;
+    @FXML
+    private TextArea ArLista;
+
+    @FXML
+    private TextArea ArLista2;
 
     @FXML
     private Button AranyalmaButton;
@@ -137,185 +155,350 @@ public class FXMLDrinksController {
     @FXML
     private Button sosButton;
 
+    @FXML
+    private Label VegosszegLabel;
+    @FXML
+    private Label VegosszegLabel2;
+
+    public void SumVegosszeg1(){
+        String s[] = ArLista.getText().split("\n");
+        int result=0;
+        for(int i = 0; i<s.length; i++){
+            result+=Integer.parseInt(s[i]);
+        }
+        VegosszegLabel.setText(result+"");
+    }
+
+
+    public void SumVegosszeg2(){
+        String s[] = ArLista2.getText().split("\n");
+        int result=0;
+        for(int i = 0; i<s.length; i++){
+            result+=Integer.parseInt(s[i]);
+        }
+        VegosszegLabel2.setText(result+"");
+    }
 
     public void HagymasPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Hagymás Lays Chips\t\t\t\t 1 cs.\n");
+        NevLista.setText(NevLista.getText()+"Lays Hagymás chips\n");
+        MennyLista.setText(MennyLista.getText()+"1 csomag\n");
+        ArLista.setText(ArLista.getText()+"400\n");
+        SumVegosszeg1();
+
     }
 
     public void SosPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Sós Lays Chips\t\t\t\t\t\t 1 cs.\n");
+        NevLista.setText(NevLista.getText()+"Lays Sós chips\n");
+        MennyLista.setText(MennyLista.getText()+"1 csomag\n");
+        ArLista.setText(ArLista.getText()+"400\n");
+        SumVegosszeg1();
     }
 
     public void SajtosPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Sajtos Lays Chips\t\t\t\t\t 1 cs.\n");
+        NevLista.setText(NevLista.getText()+"Lays Sajtos chips\n");
+        MennyLista.setText(MennyLista.getText()+"1 csomag\n");
+        ArLista.setText(ArLista.getText()+"400\n");
+        SumVegosszeg1();
     }
 
     public void Csatolt3Pushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Csapolt sör \t\t\t\t\t\t 0,3l\n");
+        NevLista.setText(NevLista.getText()+"Csapolt sör\n");
+        MennyLista.setText(MennyLista.getText()+"pohár\n");
+        ArLista.setText(ArLista.getText()+"300\n");
+        SumVegosszeg1();
     }
 
     public void Csatolt5Pushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Csapol sör \t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Csapolt sör\n");
+        MennyLista.setText(MennyLista.getText()+"korsó\n");
+        ArLista.setText(ArLista.getText()+"450\n");
+        SumVegosszeg1();
     }
 
     public void Coca33Pushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Coca dob. \t\t\t\t\t\t 0,33l\n");
+        NevLista.setText(NevLista.getText()+"Coca-cola (dob.)\n");
+        MennyLista.setText(MennyLista.getText()+"0,33l\n");
+        ArLista.setText(ArLista.getText()+"240\n");
+        SumVegosszeg1();
     }
 
     public void Pepsi33Pushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Pepsi dob. \t\t\t\t\t\t 0,33l\n");
+        NevLista.setText(NevLista.getText()+"Pepsi (dob.)\n");
+        MennyLista.setText(MennyLista.getText()+"0,33l\n");
+        ArLista.setText(ArLista.getText()+"240\n");
+        SumVegosszeg1();
     }
 
     public void CsatosPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Csatos szilva\t\t\t\t\t\t 0,5\n");
+        NevLista.setText(NevLista.getText()+"Csatos szilva\n");
+        MennyLista.setText(MennyLista.getText()+"0,05l\n");
+        ArLista.setText(ArLista.getText()+"360\n");
+        SumVegosszeg1();
     }
 
     public void RopiPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Ropi \t\t\t\t\t\t\t 1 cs.\n");
+        NevLista.setText(NevLista.getText()+"Ropi\n");
+        MennyLista.setText(MennyLista.getText()+"1 csomag\n");
+        ArLista.setText(ArLista.getText()+"210\n");
+        SumVegosszeg1();
     }
 
     public void JackPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"JackDaniels\t\t\t\t\t\t 5cl \n");
+        NevLista.setText(NevLista.getText()+"JackDaniels\n");
+        MennyLista.setText(MennyLista.getText()+"0,05l\n");
+        ArLista.setText(ArLista.getText()+"650\n");
+        SumVegosszeg1();
     }
 
     public void AranyPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Aranyalma\t\t\t\t\t\t 5cl\n");
+        NevLista.setText(NevLista.getText()+"Aranyalma\n");
+        MennyLista.setText(MennyLista.getText()+"0,05l\n");
+        ArLista.setText(ArLista.getText()+"580\n");
+        SumVegosszeg1();
     }
 
     public void SierraPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Sierra \t\t\t\t\t\t\t 5cl\n");
+        NevLista.setText(NevLista.getText()+"Sierra Tequila\n");
+        MennyLista.setText(MennyLista.getText()+"0,05l\n");
+        ArLista.setText(ArLista.getText()+"650\n");
+        SumVegosszeg1();
     }
 
     public void HennessyPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Hennessy\t\t\t\t\t\t\t 5cl\n");
+        NevLista.setText(NevLista.getText()+"Hennessy\n");
+        MennyLista.setText(MennyLista.getText()+"0,05l\n");
+        ArLista.setText(ArLista.getText()+"690\n");
+        SumVegosszeg1();
     }
 
     public void HeinekenPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Heineken dob. \t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Heineken\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"320\n");
+        SumVegosszeg1();
     }
 
     public void BorsodiPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Borsodi dob. \t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Borsodi\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"290\n");
+        SumVegosszeg1();
     }
 
     public void CocaPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Coca-Cola\t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Coca-Cola\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"450\n");
+        SumVegosszeg1();
     }
 
     public void KőbányaiPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Kőbányai dob. \t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Kőbányai(AKCIÓS)\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"210\n");
+        SumVegosszeg1();
     }
 
     public void FantaPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"FantaNarancs\t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Fanta\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"450\n");
+        SumVegosszeg1();
     }
 
     public void PepsiPushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Pepsi\t\t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Pepsi\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"450\n");
+        SumVegosszeg1();
     }
 
     public void SpritePushed(javafx.event.ActionEvent actionEvent) {
-        ListaBox.setText(ListaBox.getText()+"Sprite \t\t\t\t\t\t\t 0,5l\n");
+        NevLista.setText(NevLista.getText()+"Sprite\n");
+        MennyLista.setText(MennyLista.getText()+"0,5l\n");
+        ArLista.setText(ArLista.getText()+"450\n");
+        SumVegosszeg1();
     }
 
     public void SierraRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Sierra \t\t\t\t\t\t\t 5cl\n");
+        NevLista2.setText(NevLista2.getText()+"Sierra Tequila\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,7l\n");
+        ArLista2.setText(ArLista2.getText()+"4700\n");
+        SumVegosszeg2();
     }
 
     public void HennessyRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Hennessy\t\t\t\t\t\t\t 5cl\n");
+        NevLista2.setText(NevLista2.getText()+"Hennessy\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,7l\n");
+        ArLista2.setText(ArLista2.getText()+"12000\n");
+        SumVegosszeg2();
     }
 
     public void HeinekenRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Heineken dob. \t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Heineken\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"180\n");
+        SumVegosszeg2();
     }
 
     public void BorsodiRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Borsodi dob. \t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Borsodi\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"170\n");
+        SumVegosszeg2();
     }
 
     public void CocaRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Coca-Cola\t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Coca-Cola\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"300\n");
+        SumVegosszeg2();
     }
 
     public void KőbányaiRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Kőbányai dob. \t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Kőbányai(AKCIÓS)\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"120\n");
+        SumVegosszeg2();
     }
 
     public void FantaRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"FantaNarancs\t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Fanta\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"300\n");
+        SumVegosszeg2();
     }
 
     public void PepsiRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Pepsi\t\t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Pepsi\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"300\n");
+        SumVegosszeg2();
     }
 
     public void SpriteRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Sprite \t\t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Sprite\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"300\n");
+        SumVegosszeg2();
     }
 
     public void JackRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"JackDaniels\t\t\t\t\t\t 5cl \n");
+        NevLista2.setText(NevLista2.getText()+"JackDaniels\n");
+        MennyLista2.setText(MennyLista2.getText()+"1l\n");
+        ArLista2.setText(ArLista2.getText()+"11000\n");
+        SumVegosszeg2();
     }
 
     public void AranyRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Aranyalma\t\t\t\t\t\t 5cl\n");
+        NevLista2.setText(NevLista2.getText()+"Aranyalma\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"8000\n");
+        SumVegosszeg2();
     }
 
     public void SosRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Sós Lays Chips\t\t\t\t\t\t 1 cs.\n");
+        NevLista2.setText(NevLista2.getText()+"Lays Sós chips\n");
+        MennyLista2.setText(MennyLista2.getText()+"1 csomag\n");
+        ArLista2.setText(ArLista2.getText()+"250\n");
+        SumVegosszeg2();
     }
 
     public void HagymasRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Hagymás Lays Chips\t\t\t\t 1 cs.\n");
+        NevLista2.setText(NevLista2.getText()+"Lays Hagymás chips\n");
+        MennyLista2.setText(MennyLista2.getText()+"1 csomag\n");
+        ArLista2.setText(ArLista2.getText()+"250\n");
+        SumVegosszeg2();
     }
 
     public void SajtosRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Sajtos Lays Chips\t\t\t\t\t 1 cs.\n");
+        NevLista2.setText(NevLista2.getText()+"Lays Sajtos chips\n");
+        MennyLista2.setText(MennyLista2.getText()+"1 csomag\n");
+        ArLista2.setText(ArLista2.getText()+"250\n");
+        SumVegosszeg2();
     }
 
     public void Csatolt3RendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Csapolt sör \t\t\t\t\t\t 0,3l\n");
+        NevLista2.setText(NevLista2.getText()+"Csapolt sör\n");
+        MennyLista2.setText(MennyLista2.getText()+"50l\n");
+        ArLista2.setText(ArLista2.getText()+"28000\n");
+        SumVegosszeg2();
     }
 
     public void Csatolt5RendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Csapolt sör \t\t\t\t\t\t 0,5l\n");
+        NevLista2.setText(NevLista2.getText()+"Csapolt sör\n");
+        MennyLista2.setText(MennyLista2.getText()+"50l\n");
+        ArLista2.setText(ArLista2.getText()+"28000\n");
+        SumVegosszeg2();
     }
 
     public void Coca33RendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Coca-Cola\t\t\t\t\t\t 0,33l\n");
+        NevLista2.setText(NevLista2.getText()+"Coca-cola (dob.)\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,33l\n");
+        ArLista2.setText(ArLista2.getText()+"150\n");
+        SumVegosszeg2();
     }
 
     public void Pepsi33RendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Pepsi dob. \t\t\t\t\t\t 0,33l\n");
+        NevLista2.setText(NevLista2.getText()+"Pepsi (dob.)\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,33l\n");
+        ArLista2.setText(ArLista2.getText()+"150\n");
+        SumVegosszeg2();
     }
 
     public void CsatosRendelPushed(ActionEvent actionEvent) {
-        ListaBox2.setText(ListaBox2.getText()+"Csatos szilva\t\t\t\t\t\t 0,5\n");
+        NevLista2.setText(NevLista2.getText()+"Csatos szilva\n");
+        MennyLista2.setText(MennyLista2.getText()+"0,5l\n");
+        ArLista2.setText(ArLista2.getText()+"3900\n");
+        SumVegosszeg2();
     }
 
-    public void RopiRendelPushed(ActionEvent actionEvent) throws Exception {
-        ListaBox2.setText(ListaBox2.getText()+"Ropi \t\t\t\t\t\t\t 1 cs.\n");
-//        JpaDrinkDAO.ropi_close();
+    public void RopiRendelPushed(ActionEvent actionEvent) {
+        NevLista2.setText(NevLista2.getText()+"Ropi\n");
+        MennyLista2.setText(MennyLista2.getText()+"1 csomag\n");
+        ArLista2.setText(ArLista2.getText()+"100\n");
+        SumVegosszeg2();
+
     }
 
     public void RendelButtonPushed(ActionEvent actionEvent) {
-        ListaBox.setText("");
+        NevLista.setText("");
+        MennyLista.setText("");
+        ArLista.setText("");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Rendelés");
         alert.setHeaderText("A rendelés sikeresen megtörtént.");
         alert.setContentText("Sikeres fizetés után nyomd meg az OK gombot!");
         alert.showAndWait();
+        int kassza = Integer.parseInt(OsszegLabel.getText());
+        int bevetel = Integer.parseInt(VegosszegLabel.getText());
+        int vegleges = kassza+bevetel;
+        OsszegLabel.setText(vegleges+"");
+        OsszegLabel2.setText(vegleges+"");
+        VegosszegLabel.setText("0");
 
 
     }
 
     public void RendelButtonPushed2(ActionEvent actionEvent) {
-        ListaBox2.setText("");
+        NevLista2.setText("");
+        MennyLista2.setText("");
+        ArLista2.setText("");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Beszerzés");
         alert.setHeaderText("A beszerzés sikeresen megtörtént.");
         alert.setContentText("Folytatáshoz nyomd meg az OK gombot!");
         alert.showAndWait();
+        int kassza = Integer.parseInt(OsszegLabel2.getText());
+        int kiadas = Integer.parseInt(VegosszegLabel2.getText());
+        int vegleges = kassza-kiadas;
+        OsszegLabel.setText(vegleges+"");
+        OsszegLabel2.setText(vegleges+"");
+        VegosszegLabel2.setText("0");
     }
+
+    public void ExitDatabase(ActionEvent actionEvent) throws Exception {
+    }
+
+
 }
