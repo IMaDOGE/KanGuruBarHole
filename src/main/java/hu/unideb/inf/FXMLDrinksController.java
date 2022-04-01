@@ -1,6 +1,7 @@
 package hu.unideb.inf;
 
 import hu.unideb.inf.model.Drinks;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -492,6 +493,8 @@ public class FXMLDrinksController {
     }
 
     public void ExitDatabase(ActionEvent actionEvent) {
+        Platform.exit();
+        System.exit(0);
     }
 
 
