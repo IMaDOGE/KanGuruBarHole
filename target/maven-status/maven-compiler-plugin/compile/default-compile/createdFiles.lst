@@ -1,5 +1,10 @@
+hu\unideb\inf\model\User.class
 hu\unideb\inf\Main.class
 hu\unideb\inf\model\DrinkModel.class
+hu\unideb\inf\FXMLLoginController.class
+hu\unideb\inf\model\JpaUserDAO.class
+hu\unideb\inf\model\Users.class
+hu\unideb\inf\model\UserDAO.class
 hu\unideb\inf\model\Drinks.class
 hu\unideb\inf\MainApp.class
 hu\unideb\inf\FXMLDrinksController.class

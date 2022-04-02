@@ -1,9 +1,6 @@
 package hu.unideb.inf.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Drink
@@ -25,7 +22,7 @@ public class Drink
 
     public Drink() {
     }
-
+    @Basic
     public int getId() {
         return id;
     }
@@ -33,7 +30,7 @@ public class Drink
     public void setId(int id) {
         this.id = id;
     }
-
+    @Basic
     public String getName() {
         return name;
     }
@@ -41,7 +38,7 @@ public class Drink
     public void setName(String name) {
         this.name = name;
     }
-
+    @Basic
     public int getQuantity() {
         return quantity;
     }
@@ -49,7 +46,7 @@ public class Drink
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
+    @Basic
     public int getOrderPrice() {
         return orderPrice;
     }
@@ -57,7 +54,7 @@ public class Drink
     public void setOrderPrice(int orderPrice) {
         this.orderPrice = orderPrice;
     }
-
+    @Basic
     public int getSellPrice() {
         return sellPrice;
     }
