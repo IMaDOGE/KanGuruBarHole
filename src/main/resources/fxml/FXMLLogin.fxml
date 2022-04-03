@@ -13,10 +13,10 @@
    <children>
       <ImageView fitHeight="872.0" fitWidth="1688.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../bgLogin.jpg" />
+            <Image url="@../Pictures/bgLogin.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="562.0" layoutY="133.0" prefHeight="618.0" prefWidth="467.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="562.0" layoutY="133.0" prefHeight="618.0" prefWidth="467.0" style="-fx-background-color: #000000; -fx-background-radius: 60;">
          <children>
             <Label layoutX="153.0" layoutY="161.0" text="Üdvözöljük" textFill="WHITE">
                <font>
@@ -25,38 +25,43 @@
             </Label>
             <ImageView fitHeight="106.0" fitWidth="124.0" layoutX="178.0" layoutY="28.0" mouseTransparent="true" opacity="0.31" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../kangurubar.jpg" />
+                  <Image url="@../Pictures/kangurubar.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="UsernameText" layoutX="112.0" layoutY="298.0" prefHeight="37.0" prefWidth="242.0" promptText="username">
+            <TextField fx:id="UsernameText" layoutX="112.0" layoutY="298.0" prefHeight="37.0" prefWidth="242.0" promptText="username" style="-fx-background-radius: 30;">
                <font>
                   <Font size="16.0" />
                </font></TextField>
-            <PasswordField fx:id="PasswordText" layoutX="111.0" layoutY="358.0" prefHeight="38.0" prefWidth="242.0" promptText="password">
+            <PasswordField fx:id="PasswordText" layoutX="111.0" layoutY="358.0" prefHeight="38.0" prefWidth="242.0" promptText="password" style="-fx-background-radius: 30;">
                <font>
                   <Font size="16.0" />
                </font></PasswordField>
-            <Button fx:id="LoginButton" layoutX="84.0" layoutY="476.0" mnemonicParsing="false" onAction="#LoginButtonPressed" prefHeight="66.0" prefWidth="276.0" style="-fx-background-color: orange;" text="Bejelentkezés" textFill="WHITE">
+            <Button fx:id="LoginButton" layoutX="92.0" layoutY="450.0" mnemonicParsing="false" onAction="#LoginButtonPressed" prefHeight="66.0" prefWidth="276.0" style="-fx-background-color: orange; -fx-background-radius: 30; -fx-cursor: hand;" text="Bejelentkezés" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Demi" size="36.0" />
                </font>
             </Button>
-            <AnchorPane layoutX="111.0" layoutY="232.0" prefHeight="6.0" prefWidth="242.0" style="-fx-background-color: orange;" />
-            <Label layoutX="109.0" layoutY="413.0" prefHeight="18.0" prefWidth="242.0" textFill="#f40000">
+            <AnchorPane layoutX="111.0" layoutY="232.0" prefHeight="6.0" prefWidth="242.0" style="-fx-background-color: orange; -fx-background-radius: 30;" />
+            <Label fx:id="ErrorText" layoutX="109.0" layoutY="413.0" prefHeight="18.0" prefWidth="242.0" textFill="#f40000">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
             <ImageView fitHeight="54.0" fitWidth="68.0" layoutX="38.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../un2.jpg" />
+                  <Image url="@../Pictures/un2.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="54.0" fitWidth="68.0" layoutX="38.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../pw3.jpg" />
+                  <Image url="@../Pictures/pw3.jpg" />
                </image>
             </ImageView>
+            <Button fx:id="RegButton" layoutX="92.0" layoutY="529.0" mnemonicParsing="false" onAction="#RegButtonPressed" prefHeight="66.0" prefWidth="276.0" style="-fx-background-color: orange; -fx-background-radius: 30; -fx-cursor: hand;" text="Regisztráció" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="36.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <TextField fx:id="wait" layoutX="584.0" layoutY="14.0" prefHeight="159.0" prefWidth="423.0" style="-fx-background-color: none;">
@@ -64,5 +69,10 @@
             <Font name="Gabriola" size="85.0" />
          </font>
       </TextField>
+      <Button fx:id="ExitButton" layoutX="1226.0" layoutY="29.0" mnemonicParsing="false" onAction="#ExitButtonPressed" prefHeight="66.0" prefWidth="276.0" style="-fx-background-color: orange; -fx-background-radius: 30; -fx-cursor: hand;" text="Kilépés" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="36.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

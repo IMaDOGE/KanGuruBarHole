@@ -7,6 +7,7 @@ import hu.unideb.inf.MainApp;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.property.Users;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -85,6 +86,40 @@ public class FXMLLoginController {
         //}
         //}
 
+    }
+    @FXML
+    private Button RegButton;
+    public void RegButtonPressed(ActionEvent actionEvent) throws IOException {
+        wait.setText("Kérlek várj...");
+
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLRegistration.fxml"));
+        Scene scene = new Scene(loader.load());
+        ((FXMLRegistrationController) loader.getController()).setModel(new Users());
+        Stage stage = (Stage) RegButton.getScene().getWindow();
+        stage.setTitle("Registration");
+        stage.setScene(scene);
+        stage.setHeight(840);
+        stage.setWidth(1550);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.fullScreenProperty();
+        stage.getFullScreenExitKeyCombination();
+        stage.setFullScreen(true);
+
+        stage.show();
+
+        stage.setOnCloseRequest(event -> {
+            System.out.println("GUI bezarva");
+            Platform.exit();
+            System.exit(0);
+        });
+
+    }
+
+    public void ExitButtonPressed(ActionEvent actionEvent) {
+        Platform.exit();
+        System.exit(0);
     }
 
 }

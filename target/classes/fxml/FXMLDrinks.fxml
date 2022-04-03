@@ -27,7 +27,7 @@
                             <children>
                                 <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../bg.jpg" />
+                                        <Image url="@../Pictures/bg.jpg" />
                                     </image>
                                 </ImageView>
                                 <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
@@ -58,13 +58,13 @@
                                                 </Text>
                                                 <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@../kangurubar.jpg" />
+                                                        <Image url="@../Pictures/kangurubar.jpg" />
                                                     </image></ImageView>
-                                                    <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="1350.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
-                                                        <font>
-                                                            <Font name="Franklin Gothic Demi" size="48.0" />
-                                                        </font>
-                                                    </Button>
+                                                <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="1350.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi" size="48.0" />
+                                                    </font>
+                                                </Button>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="1550.0">
@@ -177,7 +177,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sprite-0.5l-xxl.jpeg" />
+                                                                                        <Image url="@../Pictures/sprite-0.5l-xxl.jpeg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -188,7 +188,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../pepsi-05l.png" />
+                                                                                        <Image url="@../Pictures/pepsi-05l.png" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -199,7 +199,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../fanta-narancs-0.5l.jpeg" />
+                                                                                        <Image url="@../Pictures/fanta-narancs-0.5l.jpeg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -210,7 +210,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
+                                                                                        <Image url="@../Pictures/Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -221,7 +221,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../coca-cola-0,5l.jpg" />
+                                                                                        <Image url="@../Pictures/coca-cola-0,5l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -232,7 +232,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
+                                                                                        <Image url="@../Pictures/cHJvZHVjdHM9MTUz.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -243,7 +243,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../ShotType1_540x540.jpg" />
+                                                                                        <Image url="@../Pictures/ShotType1_540x540.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -254,7 +254,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../hennessy-vs-15l.jpg" />
+                                                                                        <Image url="@../Pictures/hennessy-vs-15l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -265,7 +265,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
+                                                                                        <Image url="@../Pictures/idrinks_sierra_tequila_silver_05l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -276,7 +276,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../jack-daniels-1l.jpg" />
+                                                                                        <Image url="@../Pictures/jack-daniels-1l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -287,7 +287,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../panyolai_aranyalma12.jpg" />
+                                                                                        <Image url="@../Pictures/panyolai_aranyalma12.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -342,7 +342,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sos.jpg" />
+                                                                                        <Image url="@../Pictures/sos.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -354,7 +354,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../hagym.jpg" />
+                                                                                        <Image url="@../Pictures/hagym.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -366,7 +366,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sajtos.jpg" />
+                                                                                        <Image url="@../Pictures/sajtos.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -378,7 +378,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csapolt.png" />
+                                                                                        <Image url="@../Pictures/csapolt.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -390,7 +390,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csapolt.png" />
+                                                                                        <Image url="@../Pictures/csapolt.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -402,7 +402,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../coc2.jpg" />
+                                                                                        <Image url="@../Pictures/coc2.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -414,7 +414,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../peps2.jpg" />
+                                                                                        <Image url="@../Pictures/peps2.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -426,7 +426,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csatos.png" />
+                                                                                        <Image url="@../Pictures/csatos.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -441,7 +441,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../ropi.png" />
+                                                                                        <Image url="@../Pictures/ropi.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -491,7 +491,7 @@
                             <children>
                                 <ImageView fitHeight="1258.0" fitWidth="1623.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../bg2.jpg" />
+                                        <Image url="@../Pictures/bg2.jpg" />
                                     </image>
                                 </ImageView>
                                 <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
@@ -522,7 +522,7 @@
                                                 </Text>
                                                 <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="699.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@../kangurubar.jpg" />
+                                                        <Image url="@../Pictures/kangurubar.jpg" />
                                                     </image></ImageView>
                                             </children>
                                         </AnchorPane>
@@ -640,7 +640,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sprite-0.5l-xxl.jpeg" />
+                                                                                        <Image url="@../Pictures/sprite-0.5l-xxl.jpeg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -651,7 +651,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../pepsi-05l.png" />
+                                                                                        <Image url="@../Pictures/pepsi-05l.png" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -662,7 +662,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../fanta-narancs-0.5l.jpeg" />
+                                                                                        <Image url="@../Pictures/fanta-narancs-0.5l.jpeg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -673,7 +673,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
+                                                                                        <Image url="@../Pictures/Kőbányai-világos-sör-0,5-l-dobozos-full.png" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -684,7 +684,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../coca-cola-0,5l.jpg" />
+                                                                                        <Image url="@../Pictures/coca-cola-0,5l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -695,7 +695,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../cHJvZHVjdHM9MTUz.jpg" />
+                                                                                        <Image url="@../Pictures/cHJvZHVjdHM9MTUz.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -706,7 +706,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../ShotType1_540x540.jpg" />
+                                                                                        <Image url="@../Pictures/ShotType1_540x540.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -717,7 +717,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../hennessy-vs-15l.jpg" />
+                                                                                        <Image url="@../Pictures/hennessy-vs-15l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -728,7 +728,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../idrinks_sierra_tequila_silver_05l.jpg" />
+                                                                                        <Image url="@../Pictures/idrinks_sierra_tequila_silver_05l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -739,7 +739,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../jack-daniels-1l.jpg" />
+                                                                                        <Image url="@../Pictures/jack-daniels-1l.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -750,7 +750,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../panyolai_aranyalma12.jpg" />
+                                                                                        <Image url="@../Pictures/panyolai_aranyalma12.jpg" />
                                                                                     </image></ImageView>
                                                                             </graphic>
                                                                             <font>
@@ -805,7 +805,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sos.jpg" />
+                                                                                        <Image url="@../Pictures/sos.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -817,7 +817,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../hagym.jpg" />
+                                                                                        <Image url="@../Pictures/hagym.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -829,7 +829,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" onDragDetected="#SajtosPushed" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../sajtos.jpg" />
+                                                                                        <Image url="@../Pictures/sajtos.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -841,7 +841,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csapolt.png" />
+                                                                                        <Image url="@../Pictures/csapolt.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -853,7 +853,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csapolt.png" />
+                                                                                        <Image url="@../Pictures/csapolt.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -865,7 +865,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../coc2.jpg" />
+                                                                                        <Image url="@../Pictures/coc2.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -877,7 +877,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="53.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../peps2.jpg" />
+                                                                                        <Image url="@../Pictures/peps2.jpg" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -889,7 +889,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="47.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../csatos.png" />
+                                                                                        <Image url="@../Pictures/csatos.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
@@ -904,7 +904,7 @@
                                                                             <graphic>
                                                                                 <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
-                                                                                        <Image url="@../ropi.png" />
+                                                                                        <Image url="@../Pictures/ropi.png" />
                                                                                     </image>
                                                                                 </ImageView>
                                                                             </graphic>
