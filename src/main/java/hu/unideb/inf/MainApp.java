@@ -1,9 +1,7 @@
 package hu.unideb.inf;
 
-import hu.unideb.inf.model.Drink;
-import hu.unideb.inf.model.DrinkDAO;
-import hu.unideb.inf.model.Drinks;
-import hu.unideb.inf.model.*;
+import hu.unideb.inf.FXML.FXMLLoginController;
+import hu.unideb.inf.property.Users;
 import javafx.application.Application;
 import javafx.application.Platform;
 import org.h2.tools.Server;

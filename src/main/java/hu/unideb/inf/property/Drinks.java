@@ -1,4 +1,4 @@
-package hu.unideb.inf.model;
+package hu.unideb.inf.property;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

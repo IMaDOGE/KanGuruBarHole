@@ -1,11 +1,10 @@
-package hu.unideb.inf.model;
+package hu.unideb.inf.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-public class User {
+@Entity
+public class User
+{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -16,7 +15,10 @@ public class User {
         this.username=username;
         this.passwd=passwd;
     }
-    @Basic
+
+    public User() {
+    }
+
     public int getId() {
         return id;
     }
@@ -24,7 +26,7 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-    @Basic
+
     public String getUsername() {
         return username;
     }
@@ -32,7 +34,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-    @Basic
+
     public String getPasswd() {
         return passwd;
     }
@@ -40,9 +42,4 @@ public class User {
     public void setPasswd(String passwd) {
         this.passwd = passwd;
     }
-
-    public User() {
-    }
-
-
 }

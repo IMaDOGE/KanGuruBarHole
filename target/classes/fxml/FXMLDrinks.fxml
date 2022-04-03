@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FXMLDrinksController">
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FXML.FXMLDrinksController">
     <children>
         <TabPane prefHeight="768.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
@@ -32,7 +32,7 @@
                                 </ImageView>
                                 <SplitPane dividerPositions="0.22091836734693873" layoutY="-8.0" opacity="0.69" orientation="VERTICAL" prefHeight="785.0" prefWidth="1552.0">
                                     <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="1550.0">
                                             <children>
                                                 <Text fill="#eda407d6" layoutX="-6.0" layoutY="113.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="BarHole          " textAlignment="RIGHT" wrappingWidth="1555.800048828125">
                                                     <font>
@@ -60,11 +60,16 @@
                                                     <image>
                                                         <Image url="@../kangurubar.jpg" />
                                                     </image></ImageView>
+                                                    <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="1350.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
+                                                        <font>
+                                                            <Font name="Franklin Gothic Demi" size="48.0" />
+                                                        </font>
+                                                    </Button>
                                             </children>
                                         </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="599.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="1550.0">
                                             <children>
-                                                <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="646.0" prefWidth="1551.0">
+                                                <SplitPane dividerPositions="0.20018069179143003" layoutX="-2.0" layoutY="-2.0" prefHeight="597.0" prefWidth="1551.0">
                                                     <items>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                             <children>
@@ -146,7 +151,7 @@
                                                                 </GridPane>
                                                             </children>
                                                         </AnchorPane>
-                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="854.0">
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="1237.0">
                                                             <children>
                                                                 <GridPane layoutX="21.0" prefHeight="356.0" prefWidth="1222.0">
                                                                     <columnConstraints>
@@ -443,27 +448,22 @@
                                                                         </Button>
                                                                     </children>
                                                                 </GridPane>
-                                                                <Label fx:id="OsszegLabel" layoutX="985.0" layoutY="511.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
+                                                                <Label fx:id="OsszegLabel" layoutX="1027.0" layoutY="485.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Label fx:id="KasszaLabel" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
+                                                                <Label fx:id="KasszaLabel" layoutX="802.0" layoutY="493.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Heavy" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="42.0" layoutY="535.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
-                                                                    <font>
-                                                                        <Font name="Franklin Gothic Demi" size="48.0" />
-                                                                    </font>
-                                                                </Button>
-                                                                <Label fx:id="VegosszegLabel" layoutX="253.0" layoutY="465.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
+                                                                <Label fx:id="VegosszegLabel" layoutX="248.0" layoutY="431.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Text fill="#eda407d6" layoutX="60.0" layoutY="497.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
+                                                                <Text fill="#eda407d6" layoutX="55.0" layoutY="463.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>
@@ -911,17 +911,17 @@
                                                                         </Button>
                                                                     </children>
                                                                 </GridPane>
-                                                                <Label fx:id="OsszegLabel2" layoutX="952.0" layoutY="517.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
+                                                                <Label fx:id="OsszegLabel2" layoutX="1045.0" layoutY="480.0" prefHeight="59.0" prefWidth="163.0" text="0" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Heavy" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Label fx:id="KasszaLabel2" layoutX="760.0" layoutY="519.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
+                                                                <Label fx:id="KasszaLabel2" layoutX="853.0" layoutY="482.0" prefHeight="51.0" prefWidth="154.0" text="Kassza:" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Heavy" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Text fill="#eda407d6" layoutX="14.0" layoutY="557.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
+                                                                <Text fill="#eda407d6" layoutX="16.0" layoutY="527.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>
@@ -932,7 +932,7 @@
                                                                         <InnerShadow />
                                                                     </effect>
                                                                 </Text>
-                                                                <Label fx:id="VegosszegLabel2" layoutX="205.0" layoutY="523.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
+                                                                <Label fx:id="VegosszegLabel2" layoutX="207.0" layoutY="493.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>

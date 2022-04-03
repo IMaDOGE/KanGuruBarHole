@@ -1,5 +1,7 @@
 package hu.unideb.inf.model;
 
+import hu.unideb.inf.property.Drinks;
+
 public class DrinkModel {
         private Drinks drinks;
 

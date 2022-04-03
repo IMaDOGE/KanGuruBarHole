@@ -1,4 +1,4 @@
-package hu.unideb.inf.model;
+package hu.unideb.inf.entity;
 
 import javax.persistence.*;
 
@@ -22,7 +22,7 @@ public class Drink
 
     public Drink() {
     }
-    @Basic
+
     public int getId() {
         return id;
     }
@@ -30,7 +30,7 @@ public class Drink
     public void setId(int id) {
         this.id = id;
     }
-    @Basic
+
     public String getName() {
         return name;
     }
@@ -38,7 +38,7 @@ public class Drink
     public void setName(String name) {
         this.name = name;
     }
-    @Basic
+
     public int getQuantity() {
         return quantity;
     }
@@ -46,7 +46,7 @@ public class Drink
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    @Basic
+
     public int getOrderPrice() {
         return orderPrice;
     }
@@ -54,7 +54,7 @@ public class Drink
     public void setOrderPrice(int orderPrice) {
         this.orderPrice = orderPrice;
     }
-    @Basic
+
     public int getSellPrice() {
         return sellPrice;
     }

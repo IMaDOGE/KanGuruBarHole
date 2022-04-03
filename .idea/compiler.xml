@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mukodo" />
         <module name="JPATest" />
+        <module name="mukodo" />
+        <module name="KanGuruBarHole-dev4" />
         <module name="KanGuruBarHole-main" />
       </profile>
     </annotationProcessing>

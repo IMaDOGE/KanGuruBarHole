@@ -1,9 +1,9 @@
-package hu.unideb.inf;
+package hu.unideb.inf.FXML;
 
-import hu.unideb.inf.model.Drink;
-import hu.unideb.inf.model.DrinkDAO;
-import hu.unideb.inf.model.Drinks;
-import hu.unideb.inf.model.JpaDrinkDAO;
+import hu.unideb.inf.entity.Drink;
+import hu.unideb.inf.JpaDAO.DrinkDAO;
+import hu.unideb.inf.property.Drinks;
+import hu.unideb.inf.JpaDAO.JpaDrinkDAO;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

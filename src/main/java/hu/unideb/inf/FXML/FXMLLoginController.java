@@ -1,8 +1,12 @@
-package hu.unideb.inf;
+package hu.unideb.inf.FXML;
 
-import hu.unideb.inf.model.*;
+import hu.unideb.inf.entity.User;
+import hu.unideb.inf.JpaDAO.JpaUserDAO;
+import hu.unideb.inf.JpaDAO.UserDAO;
+import hu.unideb.inf.MainApp;
+import hu.unideb.inf.property.Drinks;
+import hu.unideb.inf.property.Users;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -21,7 +25,7 @@ public class FXMLLoginController {
         this.user = u;
     }
 
-    /*public UserDAO db(){
+    public UserDAO db(){
         UserDAO u = new JpaUserDAO();
         User user1 = new User("Admin1", "Admin1");
         User user2 = new User("Admin2","Admin2");
@@ -31,9 +35,9 @@ public class FXMLLoginController {
 
         return u;
 
-    }*/
+    }
 
-    //UserDAO u = db();
+    UserDAO u = db();
 
     @FXML
     private Button LoginButton;

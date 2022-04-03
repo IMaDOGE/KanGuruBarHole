@@ -1,4 +1,6 @@
-package hu.unideb.inf.model;
+package hu.unideb.inf.JpaDAO;
+
+import hu.unideb.inf.entity.Drink;
 
 import java.util.List;
 
