@@ -8,15 +8,19 @@ public class User
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String lastName;
+    private String firstName;
     private String username;
     private String passwd;
 
-    public User(String username, String passwd) {
-        this.username=username;
-        this.passwd=passwd;
+    public User(String lastName, String firstName, String username, String passwd) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.username = username;
+        this.passwd = passwd;
     }
 
-    public User() {
+    public User(){
     }
 
     public int getId() {
@@ -25,6 +29,22 @@ public class User
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getUsername() {

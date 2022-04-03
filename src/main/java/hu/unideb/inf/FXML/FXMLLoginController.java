@@ -27,14 +27,13 @@ public class FXMLLoginController {
 
     public UserDAO db(){
         UserDAO u = new JpaUserDAO();
-        User user1 = new User("Admin1", "Admin1");
-        User user2 = new User("Admin2","Admin2");
+        User user1 = new User("Példa" , "Péter","Admin1", "Admin1");
+        User user2 = new User("Példa", "Pál","Admin2","Admin2");
 
         u.saveUser(user1);
         u.saveUser(user2);
 
         return u;
-
     }
 
     UserDAO u = db();
