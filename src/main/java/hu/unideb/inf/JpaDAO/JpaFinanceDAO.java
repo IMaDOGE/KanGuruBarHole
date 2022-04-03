@@ -1,7 +1,7 @@
 package hu.unideb.inf.JpaDAO;
 
-import hu.unideb.inf.entity.Drink;
-import hu.unideb.inf.interfaces.DrinkDAO;
+import hu.unideb.inf.entity.Finance;
+import hu.unideb.inf.interfaces.FinanceDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -9,39 +9,38 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class JpaDrinkDAO implements DrinkDAO
+public class JpaFinanceDAO implements FinanceDAO
 {
     private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
 
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Override
-    public void saveDrink(Drink d)
+    public void saveFinance(Finance f)
     {
         entityManager.getTransaction().begin();
-        entityManager.persist(d);
+        entityManager.persist(f);
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void deleteDrink(Drink d)
+    public void deleteFinance(Finance f)
     {
         entityManager.getTransaction().begin();
-        entityManager.remove(d);
+        entityManager.remove(f);
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void updateDrink(Drink d)
+    public void updateFinance(Finance f)
     {
-        saveDrink(d);
+        saveFinance(f);
     }
 
     @Override
-    public List<Drink> getDrinks()
-    {
-        TypedQuery<Drink> query = entityManager.createQuery(
-                "SELECT d FROM Drink d", Drink.class);
+    public List<Finance> getFinances() {
+        TypedQuery<Finance> query = entityManager.createQuery(
+                "SELECT f FROM Finance f", Finance.class);
         return query.getResultList();
     }
 
@@ -52,4 +51,3 @@ public class JpaDrinkDAO implements DrinkDAO
         entityManagerFactory.close();
     }
 }
-

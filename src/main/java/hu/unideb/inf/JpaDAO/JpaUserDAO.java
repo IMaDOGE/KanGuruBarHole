@@ -1,6 +1,7 @@
 package hu.unideb.inf.JpaDAO;
 
 import hu.unideb.inf.entity.User;
+import hu.unideb.inf.interfaces.UserDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -37,19 +38,19 @@ public class JpaUserDAO implements UserDAO {
         }
 
         @Override
-        public List<User> getUsers() {
+        public List<User> getUsers()
+        {
             TypedQuery<User> query = entityManager.createQuery(
                     "SELECT u FROM User u", User.class);
-            List<User> users = query.getResultList();
-            return users;
+            return query.getResultList();
         }
 
         @Override
-        public void close() {
+        public void close()
+        {
             entityManager.close();
             entityManagerFactory.close();
         }
-
 }
 
 

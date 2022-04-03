@@ -1,7 +1,7 @@
 package hu.unideb.inf.FXML;
 
 import hu.unideb.inf.entity.Drink;
-import hu.unideb.inf.JpaDAO.DrinkDAO;
+import hu.unideb.inf.interfaces.DrinkDAO;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.JpaDAO.JpaDrinkDAO;
 import javafx.application.Platform;

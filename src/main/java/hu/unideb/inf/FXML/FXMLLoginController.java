@@ -2,7 +2,7 @@ package hu.unideb.inf.FXML;
 
 import hu.unideb.inf.entity.User;
 import hu.unideb.inf.JpaDAO.JpaUserDAO;
-import hu.unideb.inf.JpaDAO.UserDAO;
+import hu.unideb.inf.interfaces.UserDAO;
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.property.Users;

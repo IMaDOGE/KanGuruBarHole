@@ -1,4 +1,4 @@
-package hu.unideb.inf.JpaDAO;
+package hu.unideb.inf.interfaces;
 
 import hu.unideb.inf.entity.Drink;
 
