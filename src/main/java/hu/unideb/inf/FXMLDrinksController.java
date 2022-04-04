@@ -175,7 +175,7 @@ public class FXMLDrinksController {
         VegosszegLabel.setText(result+"");
     }
 
-    //Megnézzük, milyen néven van bejelentkezve az eladó, ha admin, akkor elérheti a szerkesztés gombot, másképp nem!
+    //Megnézzük, milyen néven van bejelentkezve az eladó,   ha admin, akkor elérheti a szerkesztés gombot, másképp nem!
 
 
     public void SumVegosszeg2(){
