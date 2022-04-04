@@ -4,14 +4,20 @@ import hu.unideb.inf.FXML.FXMLLoginController;
 import hu.unideb.inf.property.Users;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.ImageCursor;
+import javafx.scene.image.Image;
 import org.h2.tools.Server;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
+
+import static com.sun.glass.ui.Cursor.setVisible;
 
 
 public class MainApp extends Application {
@@ -21,6 +27,9 @@ public class MainApp extends Application {
 
             FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
             Scene scene = new Scene(loader.load());
+            Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+            ImageCursor cursor = new ImageCursor(img, 30, 30);
+            scene.setCursor(cursor);
             ((FXMLLoginController) loader.getController()).setModel(new Users());
             stage.setTitle("Bejelentkezés");
             stage.setScene(scene);

@@ -11,24 +11,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import hu.unideb.inf.JpaDAO.JpaUserDAO;
 import hu.unideb.inf.entity.User;
 import hu.unideb.inf.property.Users;
+import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 import static hu.unideb.inf.FXML.FXMLLoginController.aktivuser;
-import static hu.unideb.inf.FXML.FXMLLoginController.u;
+import static hu.unideb.inf.FXML.FXMLNewDrinks2Controller.osszeg2;
 
 
-public class FXMLDrinksController {
+public class FXMLNewDrinksController {
     private Drinks drinks;
 
     public void setModel(Drinks drinks) {
@@ -40,10 +39,9 @@ public class FXMLDrinksController {
         else{
             SzerkesztButton.setVisible(false);
         }
-        OsszegLabel.setText(osszeg+"");
-        OsszegLabel2.setText(osszeg+"");
+        OsszegLabel.setText(osszeg2+"");
+
     }
-    public static int osszeg;
     @FXML
     private TextArea MennyLista;
 
@@ -127,20 +125,12 @@ public class FXMLDrinksController {
     @FXML
     private Button KobanyaiButton;
 
-    @FXML
-    private Button KobanyaiButton2;
 
     @FXML
     private TextArea ListaBox;
 
     @FXML
-    private TextArea ListaBox2;
-
-    @FXML
     private Label OsszegLabel;
-
-    @FXML
-    private Label OsszegLabel2;
 
     @FXML
     private Button Pepsi33Button;
@@ -154,8 +144,6 @@ public class FXMLDrinksController {
     @FXML
     private Button RendelButton;
 
-    @FXML
-    private Button RendelButton2;
 
     @FXML
     private Button RopiButton;
@@ -166,14 +154,11 @@ public class FXMLDrinksController {
     @FXML
     private Button SierraButton;
 
-    @FXML
-    private Button SierraButton2;
 
     @FXML
     private Button SpriteButton;
 
-    @FXML
-    private Button SpriteButton2;
+
 
     @FXML
     private Button hagymasButton;
@@ -189,8 +174,9 @@ public class FXMLDrinksController {
 
     @FXML
     private Label VegosszegLabel;
-    @FXML
-    private Label VegosszegLabel2;
+
+
+
 
     public void SumVegosszeg1(){
         //aktiv();
@@ -205,16 +191,7 @@ public class FXMLDrinksController {
     }
 
 
-    public void SumVegosszeg2(){
 
-
-        String s[] = ArLista2.getText().split("\n");
-        int result=0;
-        for(int i = 0; i<s.length; i++){
-            result+=Integer.parseInt(s[i]);
-        }
-        VegosszegLabel2.setText(result+"");
-    }
     /*public int aktiv(){
 
         for(User users : Loginu.getUsers()){
@@ -225,7 +202,7 @@ public class FXMLDrinksController {
         }
         return 0;
     }*/
-    public DrinkDAO db(){
+    public static DrinkDAO db(){
         //aktiv();
         DrinkDAO dDAO = new JpaDrinkDAO();
         Drink d1 = new Drink("Coca Cola 0.5", 100, 300, 450);
@@ -272,7 +249,7 @@ public class FXMLDrinksController {
 
         return dDAO;
     }
-    DrinkDAO d = db();
+    static DrinkDAO d = db();
     //int i = aktiv();
 
     public void rendel(String s){
@@ -369,99 +346,7 @@ public class FXMLDrinksController {
         rendel("Sprite");
     }
 
-    public void rendel2(String s){
-        for(Drink dd : d.getDrinks()){
-            if(dd.getName() == s){
-                NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
-                MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
-                ArLista2.setText(ArLista2.getText()+dd.getOrderPrice()+"\n");
-                dd.setQuantity(dd.getQuantity()+1);
-                d.updateDrink(dd);
-            }
-        }
-        SumVegosszeg2();
-    }
-    public void SierraRendelPushed(ActionEvent actionEvent) {
-        rendel2("Sierra tequila");
-    }
-
-    public void HennessyRendelPushed(ActionEvent actionEvent) {
-        rendel2("Hennessy");
-    }
-
-    public void HeinekenRendelPushed(ActionEvent actionEvent) {
-        rendel2("Heineken");
-    }
-
-    public void BorsodiRendelPushed(ActionEvent actionEvent) {
-        rendel2("Borsodi");
-    }
-
-    public void CocaRendelPushed(ActionEvent actionEvent) {
-        rendel2("Coca Cola 0.5");
-    }
-
-    public void KőbányaiRendelPushed(ActionEvent actionEvent) {
-        rendel2("Kőbányai");
-    }
-
-    public void FantaRendelPushed(ActionEvent actionEvent) {
-        rendel2("Fanta");
-    }
-
-    public void PepsiRendelPushed(ActionEvent actionEvent) {
-        rendel2("Pepsi 0.5");
-    }
-
-    public void SpriteRendelPushed(ActionEvent actionEvent) {
-        rendel2("Sprite");
-    }
-
-    public void JackRendelPushed(ActionEvent actionEvent) {
-        rendel2("Jack Daniels");
-    }
-
-    public void AranyRendelPushed(ActionEvent actionEvent) {
-        rendel2("Aranyalma");
-    }
-
-    public void SosRendelPushed(ActionEvent actionEvent) {
-        rendel2("Lays-Sos");
-    }
-
-    public void HagymasRendelPushed(ActionEvent actionEvent) {
-        rendel2("Lays-Hagy");
-    }
-
-    public void SajtosRendelPushed(ActionEvent actionEvent) {
-        rendel2("Lays-Sajt");
-    }
-
-    public void Csatolt3RendelPushed(ActionEvent actionEvent) {
-        rendel2("Csapolt sör 0.3");
-    }
-
-    public void Csatolt5RendelPushed(ActionEvent actionEvent) {
-        rendel2("Csapolt sör 0.5");
-    }
-
-    public void Coca33RendelPushed(ActionEvent actionEvent) {
-        rendel2("Coca Cola 0.3");
-    }
-
-    public void Pepsi33RendelPushed(ActionEvent actionEvent) {
-        rendel2("Pepsi 0.3");
-    }
-
-    public void CsatosRendelPushed(ActionEvent actionEvent) {
-        rendel2("Csatos");
-    }
-
-    public void RopiRendelPushed(ActionEvent actionEvent) {
-        rendel2("Ropi");
-
-    }
-
+    static int osszeg;
     public void RendelButtonPushed(ActionEvent actionEvent) {
         NevLista.setText("");
         MennyLista.setText("");
@@ -475,30 +360,39 @@ public class FXMLDrinksController {
         int bevetel = Integer.parseInt(VegosszegLabel.getText());
         int vegleges = kassza+bevetel;
         OsszegLabel.setText(vegleges+"");
-        OsszegLabel2.setText(vegleges+"");
         VegosszegLabel.setText("0");
         osszeg=vegleges;
 
     }
 
-    public void RendelButtonPushed2(ActionEvent actionEvent) {
-        NevLista2.setText("");
-        MennyLista2.setText("");
-        ArLista2.setText("");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Beszerzés");
-        alert.setHeaderText("A beszerzés sikeresen megtörtént.");
-        alert.setContentText("Folytatáshoz nyomd meg az OK gombot!");
-        alert.showAndWait();
-        int kassza = Integer.parseInt(OsszegLabel2.getText());
-        int kiadas = Integer.parseInt(VegosszegLabel2.getText());
-        int vegleges = kassza-kiadas;
-        OsszegLabel.setText(vegleges+"");
-        OsszegLabel2.setText(vegleges+"");
-        VegosszegLabel2.setText("0");
-        osszeg=vegleges;
-    }
 
+    public void RendelesButtonPushed(ActionEvent actionEvent) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks2.fxml"));
+        Scene scene = new Scene(loader.load());
+        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+        ImageCursor cursor = new ImageCursor(img, 30, 30);
+        scene.setCursor(cursor);
+        ((FXMLNewDrinks2Controller) loader.getController()).setModel(new Drinks());
+        Stage stage = (Stage) LogoutButton.getScene().getWindow();
+        stage.setTitle("KanGuruBarHole");
+        stage.setScene(scene);
+        stage.setHeight(840);
+        stage.setWidth(1550);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.fullScreenProperty();
+        stage.getFullScreenExitKeyCombination();
+        stage.setFullScreen(true);
+        stage.show();
+
+        stage.setOnCloseRequest(event -> {
+            System.out.println("GUI bezarva");
+            Platform.exit();
+            System.exit(0);
+        });
+    }
     public void ExitDatabase(ActionEvent actionEvent) {
         Platform.exit();
         System.exit(0);
@@ -513,7 +407,9 @@ public class FXMLDrinksController {
     public void LogoutButtonPushed(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
         Scene scene = new Scene(loader.load());
-        scene.setCursor(Cursor.WAIT);
+        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+        ImageCursor cursor = new ImageCursor(img, 30, 30);
+        scene.setCursor(cursor);
         ((FXMLLoginController) loader.getController()).setModel(new Users());
         Stage stage = (Stage) LogoutButton.getScene().getWindow();
         stage.setTitle("KanGuruBarHole");
@@ -526,7 +422,6 @@ public class FXMLDrinksController {
         stage.fullScreenProperty();
         stage.getFullScreenExitKeyCombination();
         stage.setFullScreen(true);
-        scene.setCursor(Cursor.DEFAULT);
         stage.show();
 
         stage.setOnCloseRequest(event -> {

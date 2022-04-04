@@ -60,11 +60,21 @@
                                                     <image>
                                                         <Image url="@../Pictures/kangurubar.jpg" />
                                                     </image></ImageView>
-                                                <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="1350.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
+                                                <Button fx:id="DBExiting" contentDisplay="TOP" layoutX="1357.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExitDatabase" prefHeight="69.0" prefWidth="178.0" text="EXIT" textFill="#eda407">
                                                     <font>
-                                                        <Font name="Franklin Gothic Demi" size="48.0" />
+                                                        <Font name="Franklin Gothic Demi" size="24.0" />
                                                     </font>
                                                 </Button>
+                                    <Label fx:id="Dolgozo" layoutX="14.0" layoutY="115.0" text="Bejelentkezve: Ismeretlen" textFill="#eb9f07">
+                                       <font>
+                                          <Font name="Franklin Gothic Demi" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="LogoutButton" contentDisplay="TOP" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" onAction="#LogoutButtonPushed" prefHeight="69.0" prefWidth="178.0" text="Kijelentkezés" textFill="#eda407">
+                                       <font>
+                                          <Font name="Franklin Gothic Demi" size="24.0" />
+                                       </font>
+                                    </Button>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="1550.0">
@@ -458,12 +468,12 @@
                                                                         <Font name="Franklin Gothic Heavy" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Label fx:id="VegosszegLabel" layoutX="248.0" layoutY="431.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
+                                                                <Label fx:id="VegosszegLabel" layoutX="254.0" layoutY="493.0" prefHeight="42.0" prefWidth="145.0" text="0" textFill="#eda407">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <Text fill="#eda407d6" layoutX="55.0" layoutY="463.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
+                                                                <Text fill="#eda407d6" layoutX="61.0" layoutY="525.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="Végösszeg:" textAlignment="CENTER" wrappingWidth="171.79993438720703">
                                                                     <font>
                                                                         <Font name="Franklin Gothic Demi Cond" size="36.0" />
                                                                     </font>
@@ -474,6 +484,11 @@
                                                                         <InnerShadow />
                                                                     </effect>
                                                                 </Text>
+                                                <Button fx:id="SzerkesztButton" layoutX="357.0" layoutY="484.0" mnemonicParsing="false" onAction="#SzerkesztButtonPushed" text="Szerkesztés">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Demi" size="34.0" />
+                                                   </font>
+                                                </Button>
                                                             </children>
                                                         </AnchorPane>
                                                     </items>

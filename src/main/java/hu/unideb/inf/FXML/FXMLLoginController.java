@@ -2,8 +2,8 @@ package hu.unideb.inf.FXML;
 
 import hu.unideb.inf.entity.User;
 import hu.unideb.inf.JpaDAO.JpaUserDAO;
-import hu.unideb.inf.interfaces.UserDAO;
 import hu.unideb.inf.MainApp;
+import hu.unideb.inf.interfaces.UserDAO;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.property.Users;
 import javafx.application.Platform;
@@ -11,10 +11,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Cursor;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -26,18 +30,14 @@ public class FXMLLoginController {
         this.user = u;
     }
 
-    public UserDAO db(){
+    public static UserDAO db(){
         UserDAO u = new JpaUserDAO();
-        User user1 = new User("Példa" , "Péter","Admin1", "Admin1");
-        User user2 = new User("Példa", "Pál","Admin2","Admin2");
-
+        User user1 = new User("Admin","","admin", "admin");
         u.saveUser(user1);
-        u.saveUser(user2);
-
         return u;
     }
 
-    UserDAO u = db();
+    static UserDAO u = db();
 
     @FXML
     private Button LoginButton;
@@ -50,34 +50,53 @@ public class FXMLLoginController {
 
     @FXML
     private TextField wait;
+    @FXML
+    private Button RegButton;
+
+    @FXML
+    private Label ErrorText;
+    static User aktivuser;
+
 
     @FXML
     void LoginButtonPressed() throws IOException {
+        for(User us : u.getUsers()){
+            if(UsernameText.getText().equals(us.getUsername()) && PasswordText.getText().equals(us.getPasswd())){
+                wait.setText("Kérlek várj...");
+                u.saveUser(us);
+                aktivuser=us;
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks.fxml"));
+                Scene scene = new Scene(loader.load());
+                ((FXMLNewDrinksController) loader.getController()).setModel(new Drinks());
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                Stage stage = (Stage) LoginButton.getScene().getWindow();
+                stage.setTitle("KanGuruBarHole");
+                stage.setScene(scene);
+                stage.setHeight(840);
+                stage.setWidth(1550);
+                Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+                stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+                stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+                stage.fullScreenProperty();
+                stage.getFullScreenExitKeyCombination();
+                stage.setFullScreen(true);
+                stage.show();
 
-        wait.setText("Kérlek várj...");
+                stage.setOnCloseRequest(event -> {
+                    System.out.println("GUI bezarva");
+                    Platform.exit();
+                    System.exit(0);
+                });
 
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLDrinks.fxml"));
-        Scene scene = new Scene(loader.load());
-        ((FXMLDrinksController) loader.getController()).setModel(new Drinks());
-        Stage stage = (Stage) LoginButton.getScene().getWindow();
-        stage.setTitle("KanGuruBarHole");
-        stage.setScene(scene);
-        stage.setHeight(840);
-        stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
+            }
+            else{
+                ErrorText.setText("Felhasználónév vagy jelszó hibás!");
+            }
+        }
 
-        stage.show();
 
-        stage.setOnCloseRequest(event -> {
-            System.out.println("GUI bezarva");
-            Platform.exit();
-            System.exit(0);
-        });
         //UserDAO user = new JpaUserDAO();
         //User u1 = new User("Admin","Admin1");
         //for (User us : user.getUsers()){
@@ -87,13 +106,15 @@ public class FXMLLoginController {
         //}
 
     }
-    @FXML
-    private Button RegButton;
+
     public void RegButtonPressed(ActionEvent actionEvent) throws IOException {
         wait.setText("Kérlek várj...");
 
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLRegistration.fxml"));
         Scene scene = new Scene(loader.load());
+        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+        ImageCursor cursor = new ImageCursor(img, 30, 30);
+        scene.setCursor(cursor);
         ((FXMLRegistrationController) loader.getController()).setModel(new Users());
         Stage stage = (Stage) RegButton.getScene().getWindow();
         stage.setTitle("Registration");
@@ -121,5 +142,4 @@ public class FXMLLoginController {
         Platform.exit();
         System.exit(0);
     }
-
 }
