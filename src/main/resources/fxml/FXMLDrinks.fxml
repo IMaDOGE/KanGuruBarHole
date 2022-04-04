@@ -474,6 +474,16 @@
                                                                         <InnerShadow />
                                                                     </effect>
                                                                 </Text>
+                                                <Button fx:id="SzerkesztButton" layoutX="985.0" layoutY="433.0" mnemonicParsing="false" onAction="#SzerkesztButtonPushed" text="Szerkesztés">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Demi" size="34.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label fx:id="Dolgozo" layoutX="804.0" layoutY="380.0" text="Bejelentkezve: Ismeretlen">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Demi" size="36.0" />
+                                                   </font>
+                                                </Label>
                                                             </children>
                                                         </AnchorPane>
                                                     </items>

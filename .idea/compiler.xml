@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JPATest" />
         <module name="KanGuruBarHole-main" />
+        <module name="dev5" />
       </profile>
     </annotationProcessing>
   </component>

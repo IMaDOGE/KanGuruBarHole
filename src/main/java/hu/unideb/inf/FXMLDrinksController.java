@@ -151,6 +151,17 @@ public class FXMLDrinksController {
     private Button sosButton;
 
     @FXML
+    private Button SzerkesztButton;
+
+    @FXML
+    private Label Dolgozo;
+
+    @FXML
+    void SzerkesztButtonPushed(ActionEvent event) {
+
+    }
+
+    @FXML
     private Label VegosszegLabel;
     @FXML
     private Label VegosszegLabel2;
@@ -163,6 +174,8 @@ public class FXMLDrinksController {
         }
         VegosszegLabel.setText(result+"");
     }
+
+    //Megnézzük, milyen néven van bejelentkezve az eladó, ha admin, akkor elérheti a szerkesztés gombot, másképp nem!
 
 
     public void SumVegosszeg2(){
