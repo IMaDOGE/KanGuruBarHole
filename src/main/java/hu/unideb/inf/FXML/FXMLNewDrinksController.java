@@ -22,14 +22,20 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-import static hu.unideb.inf.FXML.FXMLLoginController.aktivuser;
+import static hu.unideb.inf.FXML.FXMLLoginController.*;
 import static hu.unideb.inf.FXML.FXMLNewDrinks2Controller.osszeg2;
 
 
 public class FXMLNewDrinksController {
     private Drinks drinks;
 
+    DrinkDAO drinkek = new JpaDrinkDAO();
+    public static int bevetel;
     public void setModel(Drinks drinks) {
         this.drinks = drinks;
         Dolgozo.setText("Bejelentkezve: "+aktivuser.getFirstName()+aktivuser.getLastName());
@@ -43,21 +49,21 @@ public class FXMLNewDrinksController {
 
     }
     @FXML
-    private TextArea MennyLista;
+    public TextArea MennyLista;
 
     @FXML
     private Button LogoutButton;
 
     @FXML
-    private TextArea MennyLista2;
+    public TextArea MennyLista2;
 
     @FXML
-    private TextArea NevLista;
+    public TextArea NevLista;
 
     @FXML
     private TextArea NevLista2;
     @FXML
-    private TextArea ArLista;
+    public TextArea ArLista;
 
     @FXML
     private TextArea ArLista2;
@@ -130,7 +136,7 @@ public class FXMLNewDrinksController {
     private TextArea ListaBox;
 
     @FXML
-    private Label OsszegLabel;
+    public Label OsszegLabel;
 
     @FXML
     private Button Pepsi33Button;
@@ -173,20 +179,18 @@ public class FXMLNewDrinksController {
     private Label Dolgozo;
 
     @FXML
-    private Label VegosszegLabel;
+    public Label VegosszegLabel;
 
 
 
 
     public void SumVegosszeg1(){
-        //aktiv();
-
-        String s[] = ArLista.getText().split("\n");
+        String arak[] = ArLista.getText().split("\n");
         int result=0;
-        for(int i = 0; i<s.length; i++){
-            result+=Integer.parseInt(s[i]);
+        for(int i = 0; i<arak.length; i++){
+            result+=Integer.parseInt(arak[i]);
         }
-        VegosszegLabel.setText(result+"");
+        VegosszegLabel.setText(""+result);
 
     }
 
@@ -202,7 +206,7 @@ public class FXMLNewDrinksController {
         }
         return 0;
     }*/
-    public static DrinkDAO db(){
+    /*public static DrinkDAO db(){
         //aktiv();
         DrinkDAO dDAO = new JpaDrinkDAO();
         Drink d1 = new Drink("Coca Cola 0.5", 100, 300, 450);
@@ -248,18 +252,22 @@ public class FXMLNewDrinksController {
         dDAO.saveDrink(d20);
 
         return dDAO;
-    }
-    static DrinkDAO d = db();
+    }*/
     //int i = aktiv();
-
     public void rendel(String s){
-        for(Drink dd : d.getDrinks()){
-            if(dd.getName() == s){
+        DrinkDAO ddao = new JpaDrinkDAO();
+        List<Drink> drink = ddao.getDrinks();
+        for (Drink drinksss: drink) {
+            System.out.println(drinksss.getName()+" "+drinksss.getQuantity()+" "+drinksss.getSellPrice());
+        }
+        for(Drink dd : drink){
+            if(dd.getName().equals(s)){
                 NevLista.setText(NevLista.getText()+dd.getName()+"\n");
                 MennyLista.setText(MennyLista.getText()+dd.getQuantity()+"\n");
                 ArLista.setText(ArLista.getText()+dd.getSellPrice()+"\n");
+                bevetel+=dd.getSellPrice()-dd.getOrderPrice();
                 dd.setQuantity(dd.getQuantity()-1);
-                d.updateDrink(dd);
+                ddao.updateDrink(dd);
             }
         }
         SumVegosszeg1();
@@ -347,21 +355,25 @@ public class FXMLNewDrinksController {
     }
 
     static int osszeg;
-    public void RendelButtonPushed(ActionEvent actionEvent) {
+    public static boolean returnvalue;
+    public void RendelButtonPushed(ActionEvent actionEvent) throws IOException {
+        /*FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) RendelButton.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setHeight(300);
+        stage.setWidth(600);
+        stage.showAndWait();*/
         NevLista.setText("");
         MennyLista.setText("");
         ArLista.setText("");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Rendelés");
-        alert.setHeaderText("A rendelés sikeresen megtörtént.");
-        alert.setContentText("Sikeres fizetés után nyomd meg az OK gombot!");
-        alert.showAndWait();
-        int kassza = Integer.parseInt(OsszegLabel.getText());
-        int bevetel = Integer.parseInt(VegosszegLabel.getText());
-        int vegleges = kassza+bevetel;
-        OsszegLabel.setText(vegleges+"");
-        VegosszegLabel.setText("0");
-        osszeg=vegleges;
+
+            int kassza = Integer.parseInt(OsszegLabel.getText());
+            int bevetel = Integer.parseInt(VegosszegLabel.getText());
+            int vegleges = kassza + bevetel;
+            OsszegLabel.setText(vegleges + "");
+            VegosszegLabel.setText("0");
+            osszeg = vegleges;
 
     }
 
@@ -405,20 +417,24 @@ public class FXMLNewDrinksController {
     }
 
     public void LogoutButtonPushed(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        Date date = new Date();
+        fin.setEndSession(formatter.format(date));
+        fin.setGrossIncome(bevetel);
+        fin.setNetIncome((int)(bevetel/1.27));
+        fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel.getText()));
+        f.updateFinance(fin);
+
+
+
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
         Scene scene = new Scene(loader.load());
         Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
         ImageCursor cursor = new ImageCursor(img, 30, 30);
         scene.setCursor(cursor);
-        ((FXMLLoginController) loader.getController()).setModel(new Users());
         Stage stage = (Stage) LogoutButton.getScene().getWindow();
-        stage.setTitle("KanGuruBarHole");
+        stage.setTitle("Bejelentkezés");
         stage.setScene(scene);
-        stage.setHeight(840);
-        stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         stage.fullScreenProperty();
         stage.getFullScreenExitKeyCombination();
         stage.setFullScreen(true);
@@ -429,5 +445,6 @@ public class FXMLNewDrinksController {
             Platform.exit();
             System.exit(0);
         });
+
     }
 }

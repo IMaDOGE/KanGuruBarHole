@@ -1,5 +1,6 @@
 package hu.unideb.inf.property;
 
+import hu.unideb.inf.entity.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -27,4 +28,5 @@ public class Users {
     public void setpw(String pw) {
         this.password.set(pw);
     }
-    }
+
+}

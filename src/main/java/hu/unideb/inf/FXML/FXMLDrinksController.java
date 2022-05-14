@@ -25,7 +25,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import static hu.unideb.inf.FXML.FXMLLoginController.aktivuser;
-import static hu.unideb.inf.FXML.FXMLLoginController.u;
 
 
 public class FXMLDrinksController {

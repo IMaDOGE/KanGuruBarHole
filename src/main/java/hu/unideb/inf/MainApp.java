@@ -25,12 +25,11 @@ public class MainApp extends Application {
     public void start(Stage stage) throws SQLException, IOException {
         startDatabase();
 
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
             Scene scene = new Scene(loader.load());
             Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
             ImageCursor cursor = new ImageCursor(img, 30, 30);
             scene.setCursor(cursor);
-            ((FXMLLoginController) loader.getController()).setModel(new Users());
             stage.setTitle("Bejelentkezés");
             stage.setScene(scene);
             stage.fullScreenProperty();

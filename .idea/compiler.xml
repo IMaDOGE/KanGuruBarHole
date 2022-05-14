@@ -13,6 +13,7 @@
         <module name="KanGuruBarHole-dev4" />
         <module name="KanGuruBarHole-main" />
         <module name="dev5" />
+        <module name="db" />
       </profile>
     </annotationProcessing>
   </component>

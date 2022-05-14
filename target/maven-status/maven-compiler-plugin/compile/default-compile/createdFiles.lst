@@ -5,6 +5,7 @@ hu\unideb\inf\FXML\FXMLRegistrationController.class
 hu\unideb\inf\FXML\FXMLLoginController.class
 hu\unideb\inf\FXML\FXMLNewDrinks2Controller.class
 hu\unideb\inf\JpaDAO\JpaDrinkDAO.class
+hu\unideb\inf\FXML\FXMLInfoController.class
 hu\unideb\inf\interfaces\DrinkDAO.class
 hu\unideb\inf\JpaDAO\JpaUserDAO.class
 hu\unideb\inf\FXML\FXMLDrinksController.class

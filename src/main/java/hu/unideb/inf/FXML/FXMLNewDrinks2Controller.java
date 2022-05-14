@@ -1,7 +1,9 @@
 package hu.unideb.inf.FXML;
 
+import hu.unideb.inf.JpaDAO.JpaDrinkDAO;
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.entity.Drink;
+import hu.unideb.inf.interfaces.DrinkDAO;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.property.Users;
 import javafx.application.Platform;
@@ -21,8 +23,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import static hu.unideb.inf.FXML.FXMLNewDrinksController.d;
+import static hu.unideb.inf.FXML.FXMLLoginController.f;
+import static hu.unideb.inf.FXML.FXMLLoginController.fin;
+import static hu.unideb.inf.FXML.FXMLNewDrinksController.bevetel;
 import static hu.unideb.inf.FXML.FXMLNewDrinksController.osszeg;
 
 public class FXMLNewDrinks2Controller {
@@ -141,13 +147,70 @@ public class FXMLNewDrinks2Controller {
     }
 
     public void rendel2(String s){
-        for(Drink dd : d.getDrinks()){
-            if(dd.getName() == s){
+
+        DrinkDAO ddao = new JpaDrinkDAO();
+        for(Drink dd : ddao.getDrinks()){
+            if(dd.getName().equals(s)){
+                if(s.equals("Csapolt sör 0.3")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*166)+"\n");
+                    dd.setQuantity(dd.getQuantity()+166);
+                    ddao.updateDrink(dd);
+                }
+                if(s.equals("Csapolt sör 0.5")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*100)+"\n");
+                    dd.setQuantity(dd.getQuantity()+100);
+                    ddao.updateDrink(dd);
+
+                }
+                if(s.equals("Hennessy")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
+                    dd.setQuantity(dd.getQuantity()+20);
+                    ddao.updateDrink(dd);
+
+                }
+                if(s.equals("Sierra tequila")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
+                    dd.setQuantity(dd.getQuantity()+20);
+                    ddao.updateDrink(dd);
+
+                }
+                if(s.equals("Jack Daniels")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
+                    dd.setQuantity(dd.getQuantity()+20);
+                    ddao.updateDrink(dd);
+
+                }
+                if(s.equals("Aranyalma")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
+                    dd.setQuantity(dd.getQuantity()+20);
+                    ddao.updateDrink(dd);
+
+                }
+                if(s.equals("Csatos")){
+                    NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
+                    MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
+                    ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
+                    dd.setQuantity(dd.getQuantity()+20);
+                    ddao.updateDrink(dd);
+
+                }
                 NevLista2.setText(NevLista2.getText()+dd.getName()+"\n");
                 MennyLista2.setText(MennyLista2.getText()+dd.getQuantity()+"\n");
-                ArLista2.setText(ArLista2.getText()+dd.getOrderPrice()+"\n");
+                ArLista2.setText(ArLista2.getText()+(dd.getOrderPrice()*20)+"\n");
                 dd.setQuantity(dd.getQuantity()+1);
-                d.updateDrink(dd);
+                ddao.updateDrink(dd);
             }
         }
         SumVegosszeg2();
@@ -233,15 +296,17 @@ public class FXMLNewDrinks2Controller {
 
     }
     static int osszeg2;
-    public void RendelButtonPushed2(ActionEvent actionEvent) {
+    public void RendelButtonPushed2(ActionEvent actionEvent) throws IOException {
+        /*FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) RendelButton2.getScene().getWindow();
+        stage.setTitle("KanGuruBarHole");
+        stage.setScene(scene);
+        stage.showAndWait();*/
+
         NevLista2.setText("");
         MennyLista2.setText("");
         ArLista2.setText("");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Beszerzés");
-        alert.setHeaderText("A beszerzés sikeresen megtörtént.");
-        alert.setContentText("Folytatáshoz nyomd meg az OK gombot!");
-        alert.showAndWait();
         int kassza = Integer.parseInt(OsszegLabel2.getText());
         int kiadas = Integer.parseInt(VegosszegLabel2.getText());
         int vegleges = kassza-kiadas;
@@ -262,24 +327,25 @@ public class FXMLNewDrinks2Controller {
     }
 
     public void LogoutButtonPushed(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        Date date = new Date();
+        fin.setEndSession(formatter.format(date));
+        fin.setGrossIncome(bevetel);
+        fin.setNetIncome((int)(bevetel/1.27));
+        fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel2.getText()));
+        f.updateFinance(fin);
+
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
         Scene scene = new Scene(loader.load());
         Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
         ImageCursor cursor = new ImageCursor(img, 30, 30);
         scene.setCursor(cursor);
-        ((FXMLLoginController) loader.getController()).setModel(new Users());
         Stage stage = (Stage) LogoutButton.getScene().getWindow();
-        stage.setTitle("KanGuruBarHole");
+        stage.setTitle("Bejelentkezés");
         stage.setScene(scene);
-        stage.setHeight(840);
-        stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         stage.fullScreenProperty();
         stage.getFullScreenExitKeyCombination();
         stage.setFullScreen(true);
-
         stage.show();
 
         stage.setOnCloseRequest(event -> {

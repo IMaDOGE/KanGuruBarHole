@@ -1,8 +1,11 @@
 package hu.unideb.inf.FXML;
 
+import hu.unideb.inf.JpaDAO.JpaFinanceDAO;
+import hu.unideb.inf.entity.Finance;
 import hu.unideb.inf.entity.User;
 import hu.unideb.inf.JpaDAO.JpaUserDAO;
 import hu.unideb.inf.MainApp;
+import hu.unideb.inf.interfaces.FinanceDAO;
 import hu.unideb.inf.interfaces.UserDAO;
 import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.property.Users;
@@ -23,21 +26,27 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class FXMLLoginController {
     private Users user;
     public void setModel(Users u) {
+
         this.user = u;
+        users = new JpaUserDAO();
+        userlist=users.getUsers();
     }
 
-    public static UserDAO db(){
+    /*public static UserDAO db(){
         UserDAO u = new JpaUserDAO();
         User user1 = new User("Admin","","admin", "admin");
         u.saveUser(user1);
         return u;
-    }
+    }*/
 
-    static UserDAO u = db();
+    //static UserDAO u = db();
 
     @FXML
     private Button LoginButton;
@@ -58,13 +67,27 @@ public class FXMLLoginController {
     static User aktivuser;
 
 
+    public static FinanceDAO f = new JpaFinanceDAO();
+
+    public static Finance fin = new Finance();
+
+    public static UserDAO users;
+    public static List<User> userlist;
+
     @FXML
     void LoginButtonPressed() throws IOException {
-        for(User us : u.getUsers()){
+
+        for(User us : userlist){
             if(UsernameText.getText().equals(us.getUsername()) && PasswordText.getText().equals(us.getPasswd())){
                 wait.setText("Kérlek várj...");
-                u.saveUser(us);
                 aktivuser=us;
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+                Date date = new Date();
+                System.out.println(formatter.format(date));
+                fin.setStartSession(formatter.format(date));
+                fin.setUser(aktivuser.getFirstName()+" "+aktivuser.getLastName());
+                fin.setMoneyBeforeSession(0);
+                f.updateFinance(fin);
                 FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks.fxml"));
                 Scene scene = new Scene(loader.load());
                 ((FXMLNewDrinksController) loader.getController()).setModel(new Drinks());
@@ -142,4 +165,6 @@ public class FXMLLoginController {
         Platform.exit();
         System.exit(0);
     }
+
+
 }

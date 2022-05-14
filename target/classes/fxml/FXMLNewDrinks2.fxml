@@ -60,7 +60,7 @@
                         <Font name="Franklin Gothic Demi" size="36.0" />
                     </font>
                 </Label>
-                <Button fx:id="LogoutButton" contentDisplay="TOP" layoutX="12.0" layoutY="41.0" mnemonicParsing="false" onAction="#LogoutButtonPushed" prefHeight="82.0" prefWidth="262.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: orange; -fx-border-width: 7;" text="Kijelentkezés" textFill="#eda407">
+                <Button fx:id="LogoutButton" contentDisplay="TOP" layoutX="12.0" layoutY="41.0" mnemonicParsing="false" onAction="#LogoutButtonPushed" prefHeight="82.0" prefWidth="262.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: orange; -fx-border-width: 7;" text="Kassza zárás" textFill="#eda407">
                     <font>
                         <Font name="Franklin Gothic Demi" size="34.0" />
                     </font>

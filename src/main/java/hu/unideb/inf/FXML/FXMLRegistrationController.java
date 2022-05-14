@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static hu.unideb.inf.FXML.FXMLLoginController.u;
+import static hu.unideb.inf.FXML.FXMLLoginController.*;
 import static java.lang.Character.*;
 
 public class FXMLRegistrationController {
@@ -95,8 +95,8 @@ public class FXMLRegistrationController {
 
         else {
             User registered = new User(kereszt, vezetek,username, pw);
-            u.saveUser(registered);
-            for(User u : u.getUsers())
+            users.saveUser(registered);
+            for(User u : userlist)
                 System.out.println(u.getUsername()+u.getPasswd());
             FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLLogin.fxml"));
             Scene scene = new Scene(loader.load());
