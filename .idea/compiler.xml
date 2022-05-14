@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JPATest" />
         <module name="mukodo" />
+        <module name="KanGuruBarHole-master" />
+        <module name="husz" />
         <module name="KanGuruBarHole-dev4" />
         <module name="KanGuruBarHole-main" />
         <module name="dev5" />
