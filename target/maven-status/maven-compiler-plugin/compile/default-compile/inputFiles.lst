@@ -1,26 +1,26 @@
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLNewDrinks2Controller.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLNewDrinksController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\JpaDAO\JpaFinanceDAO.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\property\Users.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLDeleteDrinkController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\model\DrinkModel.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\JpaDAO\JpaDrinkDAO.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\entity\Finance.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLRegistrationController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLAddNewDrinkController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\entity\Drink.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\Application.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLPopupController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLEditingController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\property\Drinks.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLLoginController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\interfaces\FinanceDAO.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLDrinksController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\JpaDAO\JpaUserDAO.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLInfoController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\Main.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\interfaces\DrinkDAO.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\entity\User.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\FXML\FXMLEditDrinkController.java
-C:\Users\szabi\Desktop\alert\src\main\java\hu\unideb\inf\interfaces\UserDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\JpaDAO\JpaUserDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\JpaDAO\JpaFinanceDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\entity\User.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\property\Users.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLDeleteDrinkController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLNewDrinks2Controller.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLPopupController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\property\Drinks.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLDrinksController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\interfaces\UserDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\Main.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLAddNewDrinkController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\entity\Finance.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\JpaDAO\JpaDrinkDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\Application.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\interfaces\FinanceDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\entity\Drink.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLNewDrinksController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\MainApp.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\interfaces\DrinkDAO.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLLoginController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLInfoController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLEditingController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLEditDrinkController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\FXML\FXMLRegistrationController.java
+D:\Dropbox\Suli\Szoftverfejlesztés mérnököknek\KanGuruBarHole-dev5\src\main\java\hu\unideb\inf\model\DrinkModel.java

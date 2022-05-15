@@ -13,6 +13,7 @@
         <module name="uj" />
         <module name="alert" />
         <module name="KanGuruBarHole-dev4" />
+        <module name="KanGuruBarHole-dev5" />
         <module name="KanGuruBarHole-main" />
         <module name="dev5" />
         <module name="db" />
