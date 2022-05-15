@@ -14,10 +14,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -25,6 +22,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import static hu.unideb.inf.FXML.FXMLLoginController.f;
 import static hu.unideb.inf.FXML.FXMLLoginController.fin;
@@ -34,6 +32,13 @@ import static hu.unideb.inf.FXML.FXMLNewDrinksController.osszeg;
 public class FXMLNewDrinks2Controller {
     public void setModel(Drinks drinks) {
         OsszegLabel2.setText(osszeg+"");
+        DrinkDAO drink = new JpaDrinkDAO();
+        List<Drink> dri= drink.getDrinks();
+        for (Drink d: dri) {
+            if(d.getName().charAt(0)=='*'){
+                ComboBox.getItems().add(d.getName());
+            }
+        }
     }
     @FXML
     private TextArea ArLista2;
@@ -321,37 +326,71 @@ public class FXMLNewDrinks2Controller {
     }
 
 
-    public void SzerkesztButtonPushed(ActionEvent actionEvent) {
-
-        // szerkesztés...
+    public void SzerkesztButtonPushed(ActionEvent actionEvent) throws IOException {
+        ButtonType tovabb = new ButtonType("Tovább");
+        ButtonType megse = new ButtonType("Mégse");
+        Alert a = new Alert(Alert.AlertType.NONE, "Folytatáshoz válassz:", tovabb, megse);
+        a.setTitle("Megerősítés");
+        a.setHeaderText("Biztosan tovább lépsz a szerkesztés módba?");
+        a.setResizable(true);
+        a.showAndWait().ifPresent(response -> {
+            if (response == tovabb) {
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLEditing.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                Stage stage = (Stage) LogoutButton.getScene().getWindow();
+                stage.setTitle("Bejelentkezés");
+                stage.setScene(scene);
+                stage.show();
+            }
+        });
     }
 
     public void LogoutButtonPushed(ActionEvent actionEvent) throws IOException {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-        Date date = new Date();
-        fin.setEndSession(formatter.format(date));
-        fin.setGrossIncome(bevetel);
-        fin.setNetIncome((int)(bevetel/1.27));
-        fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel2.getText()));
-        f.updateFinance(fin);
+        ButtonType tovabb = new ButtonType("Tovább");
+        ButtonType megse = new ButtonType("Mégse");
+        Alert a = new Alert(Alert.AlertType.NONE, "Folytatáshoz válassz:", tovabb, megse);
+        a.setTitle("Megerősítés");
+        a.setHeaderText("Biztosan ki szeretnél jelentkezni?");
+        a.setResizable(true);
+        a.showAndWait().ifPresent(response -> {
+            if (response == tovabb) {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+                Date date = new Date();
+                fin.setEndSession(formatter.format(date));
+                fin.setGrossIncome(bevetel);
+                fin.setNetIncome((int)(bevetel/1.27));
+                fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel2.getText()));
+                f.updateFinance(fin);
 
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
-        Scene scene = new Scene(loader.load());
-        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
-        ImageCursor cursor = new ImageCursor(img, 30, 30);
-        scene.setCursor(cursor);
-        Stage stage = (Stage) LogoutButton.getScene().getWindow();
-        stage.setTitle("Bejelentkezés");
-        stage.setScene(scene);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
-        stage.show();
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                Stage stage = (Stage) LogoutButton.getScene().getWindow();
+                stage.setTitle("Bejelentkezés");
+                stage.setScene(scene);
+                stage.show();
 
-        stage.setOnCloseRequest(event -> {
-            System.out.println("GUI bezarva");
-            Platform.exit();
-            System.exit(0);
+                stage.setOnCloseRequest(event -> {
+                    System.out.println("GUI bezarva");
+                    Platform.exit();
+                    System.exit(0);
+                });
+            }
         });
     }
 
@@ -367,12 +406,6 @@ public class FXMLNewDrinks2Controller {
         stage.setScene(scene);
         stage.setHeight(840);
         stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
         stage.show();
 
         stage.setOnCloseRequest(event -> {
@@ -384,4 +417,10 @@ public class FXMLNewDrinks2Controller {
     }
 
 
+    @FXML
+    private javafx.scene.control.ComboBox<String> ComboBox;
+
+    public void HozzaadButtonClicked(ActionEvent actionEvent) {
+        rendel2(ComboBox.getValue());
+    }
 }

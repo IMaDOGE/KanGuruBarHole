@@ -7,17 +7,22 @@ import hu.unideb.inf.property.Drinks;
 import hu.unideb.inf.JpaDAO.JpaDrinkDAO;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import hu.unideb.inf.JpaDAO.JpaUserDAO;
 import hu.unideb.inf.entity.User;
 import hu.unideb.inf.property.Users;
 import javafx.scene.image.Image;
+import javafx.scene.layout.TilePane;
+import javafx.stage.Modality;
+import javafx.stage.Popup;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -44,6 +49,13 @@ public class FXMLNewDrinksController {
         }
         else{
             SzerkesztButton.setVisible(false);
+        }
+        DrinkDAO drink = new JpaDrinkDAO();
+        List<Drink> dri= drink.getDrinks();
+        for (Drink d: dri) {
+            if(d.getName().charAt(0)=='*'){
+            ComboBox.getItems().add(d.getName());
+            }
         }
         OsszegLabel.setText(osszeg2+"");
 
@@ -379,30 +391,37 @@ public class FXMLNewDrinksController {
 
 
     public void RendelesButtonPushed(ActionEvent actionEvent) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks2.fxml"));
-        Scene scene = new Scene(loader.load());
-        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
-        ImageCursor cursor = new ImageCursor(img, 30, 30);
-        scene.setCursor(cursor);
-        ((FXMLNewDrinks2Controller) loader.getController()).setModel(new Drinks());
-        Stage stage = (Stage) LogoutButton.getScene().getWindow();
-        stage.setTitle("KanGuruBarHole");
-        stage.setScene(scene);
-        stage.setHeight(840);
-        stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
-        stage.show();
-
-        stage.setOnCloseRequest(event -> {
-            System.out.println("GUI bezarva");
-            Platform.exit();
-            System.exit(0);
+        ButtonType tovabb = new ButtonType("Tovább");
+        ButtonType megse = new ButtonType("Mégse");
+        Alert a = new Alert(Alert.AlertType.NONE, "Folytatáshoz válassz:", tovabb, megse);
+        a.setTitle("Megerősítés");
+        a.setHeaderText("Biztosan tovább lépsz a beszerzés módba?");
+        a.setResizable(true);
+        a.showAndWait().ifPresent(response -> {
+            if (response == tovabb) {
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks2.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                ((FXMLNewDrinks2Controller) loader.getController()).setModel(new Drinks());
+                Stage stage = (Stage) LogoutButton.getScene().getWindow();
+                stage.setTitle("KanGuruBarHole");
+                stage.setScene(scene);
+                stage.setHeight(840);
+                stage.setWidth(1550);
+                stage.show();
+                stage.setOnCloseRequest(event -> {
+                    System.out.println("GUI bezarva");
+                    Platform.exit();
+                    System.exit(0);
+                });
+            }
         });
     }
     public void ExitDatabase(ActionEvent actionEvent) {
@@ -410,41 +429,80 @@ public class FXMLNewDrinksController {
         System.exit(0);
     }
 
-
-    public void SzerkesztButtonPushed(ActionEvent actionEvent) {
-
-        // szerkesztés...
+    public void SzerkesztButtonPushed(ActionEvent actionEvent) throws IOException {
+        ButtonType tovabb = new ButtonType("Tovább");
+        ButtonType megse = new ButtonType("Mégse");
+        Alert a = new Alert(Alert.AlertType.NONE, "Folytatáshoz válassz:", tovabb, megse);
+        a.setTitle("Megerősítés");
+        a.setHeaderText("Biztosan tovább lépsz a szerkesztés módba?");
+        a.setResizable(true);
+        a.showAndWait().ifPresent(response -> {
+            if (response == tovabb) {
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLEditing.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                Stage stage = (Stage) LogoutButton.getScene().getWindow();
+                stage.setTitle("Bejelentkezés");
+                stage.setScene(scene);
+                stage.show();
+            }
+        });
     }
 
+
+
     public void LogoutButtonPushed(ActionEvent actionEvent) throws IOException {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-        Date date = new Date();
-        fin.setEndSession(formatter.format(date));
-        fin.setGrossIncome(bevetel);
-        fin.setNetIncome((int)(bevetel/1.27));
-        fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel.getText()));
-        f.updateFinance(fin);
 
-
-
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
-        Scene scene = new Scene(loader.load());
-        Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
-        ImageCursor cursor = new ImageCursor(img, 30, 30);
-        scene.setCursor(cursor);
-        Stage stage = (Stage) LogoutButton.getScene().getWindow();
-        stage.setTitle("Bejelentkezés");
-        stage.setScene(scene);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
-        stage.show();
-
-        stage.setOnCloseRequest(event -> {
-            System.out.println("GUI bezarva");
-            Platform.exit();
-            System.exit(0);
+        ButtonType tovabb = new ButtonType("Tovább");
+        ButtonType megse = new ButtonType("Mégse");
+        Alert a = new Alert(Alert.AlertType.NONE, "Folytatáshoz válassz:", tovabb, megse);
+        a.setTitle("Megerősítés");
+        a.setHeaderText("Biztosan ki szeretnél jelentkezni?");
+        a.setResizable(true);
+        a.showAndWait().ifPresent(response -> {
+            if (response == tovabb) {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+                Date date = new Date();
+                fin.setEndSession(formatter.format(date));
+                fin.setGrossIncome(bevetel);
+                fin.setNetIncome((int)(bevetel/1.27));
+                fin.setMoneyAfterSession(Integer.parseInt(OsszegLabel.getText()));
+                f.updateFinance(fin);
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLInfo.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image img = new Image(getClass().getResourceAsStream("/Pictures/cursor.png"));
+                ImageCursor cursor = new ImageCursor(img, 30, 30);
+                scene.setCursor(cursor);
+                Stage stage = (Stage) LogoutButton.getScene().getWindow();
+                stage.setTitle("Bejelentkezés");
+                stage.setScene(scene);
+                stage.show();
+                stage.setOnCloseRequest(event -> {
+                    System.out.println("GUI bezarva");
+                    Platform.exit();
+                    System.exit(0);
+                });
+            }
         });
+    }
 
+
+    @FXML
+    private ComboBox<String> ComboBox;
+
+    public void HozzaadButtonClicked(ActionEvent actionEvent) {
+        rendel(ComboBox.getValue());
     }
 }

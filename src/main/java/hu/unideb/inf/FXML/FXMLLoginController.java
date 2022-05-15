@@ -99,12 +99,6 @@ public class FXMLLoginController {
                 stage.setScene(scene);
                 stage.setHeight(840);
                 stage.setWidth(1550);
-                Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-                stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-                stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-                stage.fullScreenProperty();
-                stage.getFullScreenExitKeyCombination();
-                stage.setFullScreen(true);
                 stage.show();
 
                 stage.setOnCloseRequest(event -> {
@@ -144,12 +138,6 @@ public class FXMLLoginController {
         stage.setScene(scene);
         stage.setHeight(840);
         stage.setWidth(1550);
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
 
         stage.show();
 

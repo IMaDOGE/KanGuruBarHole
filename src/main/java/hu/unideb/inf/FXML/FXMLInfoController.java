@@ -34,9 +34,6 @@ public class FXMLInfoController {
         Stage stage = (Stage) OpenCassa.getScene().getWindow();
         stage.setTitle("Bejelentkezés");
         stage.setScene(scene);
-        stage.fullScreenProperty();
-        stage.getFullScreenExitKeyCombination();
-        stage.setFullScreen(true);
         stage.show();
     }
 }

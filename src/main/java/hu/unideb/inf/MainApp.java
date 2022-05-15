@@ -32,9 +32,6 @@ public class MainApp extends Application {
             scene.setCursor(cursor);
             stage.setTitle("Bejelentkezés");
             stage.setScene(scene);
-            stage.fullScreenProperty();
-            stage.getFullScreenExitKeyCombination();
-            stage.setFullScreen(true);
             stage.show();
 
             stage.setOnCloseRequest(event -> {
