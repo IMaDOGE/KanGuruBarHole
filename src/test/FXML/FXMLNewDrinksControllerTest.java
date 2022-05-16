@@ -1,12 +1,11 @@
-package hu.unideb.inf.tests.Entity;
+package FXML;
 
-import hu.unideb.inf.entity.User;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
-public class UserTest {
+public class FXMLNewDrinksControllerTest {
     @Mock
-    private User underTest1, underTest2;
+    private int NemEzKellIde; // csak idedobtam valamit, hogy ne huzza ala az @Mock-ot
 
     @BeforeAll //@BeforeClass
     public static void setUpClass() {
@@ -33,3 +32,4 @@ public class UserTest {
     }
     // TODO
 }
+

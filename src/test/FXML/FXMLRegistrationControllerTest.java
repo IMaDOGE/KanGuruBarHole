@@ -1,12 +1,11 @@
-package hu.unideb.inf.tests.Entity;
+package FXML;
 
-import hu.unideb.inf.entity.Finance;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
-public class FinanceTest {
+public class FXMLRegistrationControllerTest {
     @Mock
-    private Finance underTest1, underTest2;
+    private int NemEzKellIde; // csak idedobtam valamit, hogy ne huzza ala az @Mock-ot
 
     @BeforeAll //@BeforeClass
     public static void setUpClass() {
@@ -33,3 +32,4 @@ public class FinanceTest {
     }
     // TODO
 }
+

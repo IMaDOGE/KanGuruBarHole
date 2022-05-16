@@ -1,9 +1,9 @@
-package hu.unideb.inf.tests.FXML;
+package FXML;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
-public class FXMLNewDrinksControllerTest {
+public class FXMLDeleteDrinkControllerTest {
     @Mock
     private int NemEzKellIde; // csak idedobtam valamit, hogy ne huzza ala az @Mock-ot
 
@@ -32,4 +32,3 @@ public class FXMLNewDrinksControllerTest {
     }
     // TODO
 }
-

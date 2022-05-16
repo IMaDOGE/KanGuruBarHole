@@ -1,9 +1,8 @@
-package hu.unideb.inf.tests.FXML;
+package FXML;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
-
-public class FXMLPopupControllerTest {
+public class FXMLEditingControllerTest {
     @Mock
     private int NemEzKellIde; // csak idedobtam valamit, hogy ne huzza ala az @Mock-ot
 

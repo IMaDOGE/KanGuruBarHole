@@ -1,12 +1,12 @@
-package hu.unideb.inf.tests.FXML;
+package Entity;
 
 import hu.unideb.inf.entity.User;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
-public class FXMLAddNewDrinkControllerTest {
+public class UserTest {
     @Mock
-    private int NemEzKellIde; // csak idedobtam valamit, hogy ne huzza ala az @Mock-ot
+    private User underTest1, underTest2;
 
     @BeforeAll //@BeforeClass
     public static void setUpClass() {
