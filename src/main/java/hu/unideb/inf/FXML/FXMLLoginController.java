@@ -85,7 +85,7 @@ public class FXMLLoginController {
                 Date date = new Date();
                 System.out.println(formatter.format(date));
                 fin.setStartSession(formatter.format(date));
-                fin.setUser(aktivuser.getFirstName()+" "+aktivuser.getLastName());
+                fin.setUser(""+aktivuser.getId());
                 fin.setMoneyBeforeSession(0);
                 f.updateFinance(fin);
                 FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLNewDrinks.fxml"));

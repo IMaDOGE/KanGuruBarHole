@@ -9,16 +9,6 @@ import static org.mockito.Mockito.*;
 public class DrinkTest {
     @Mock
     private Drink underTest1; //, underTest2;
-
-    @BeforeAll //@BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterAll //@AfterClass
-    public static void tearDownClass() {
-    }
-
-
     @BeforeEach //@Before
     public void setUp() {
         MockitoAnnotations.openMocks(this);

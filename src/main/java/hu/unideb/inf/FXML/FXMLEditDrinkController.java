@@ -86,6 +86,10 @@ public class FXMLEditDrinkController {
                 setModel();
             }
         });
+        NameTxt1.setText("");
+        Mennyiseg.setText("");
+        EladAr.setText("");
+        BeAr.setText("");
     }
 
     private Button LoadButton;

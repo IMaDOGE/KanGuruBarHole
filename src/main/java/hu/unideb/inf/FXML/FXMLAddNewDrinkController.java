@@ -55,6 +55,11 @@ public class FXMLAddNewDrinkController {
             }
         });
 
+        NameTxt.setText("");
+        QuantityTxt.setText("");
+        Br.setText("");
+        Netto.setText("");
+
     }
 
     public void BackButtonPressed(ActionEvent actionEvent) throws IOException {
